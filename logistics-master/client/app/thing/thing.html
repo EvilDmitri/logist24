@@ -1,0 +1,58 @@
+
+<div class="container"  ng-controller="ThingCtrl">
+    <h1>{{thing.name}}</h1>
+
+  <div class="col-sm-6" >
+    <table class="table table-striped">
+      <tbody>
+      <tr>
+        <td class="col-md-2">Reisi lõpp:</td>
+        <td class="col-md-8"></td>
+
+      </tr>
+      <tr>
+        <td class="col-md-2">Maakond:</td>
+        <td class="col-md-8"><h4><strong>{{thing.position.maakond}}</strong></h4></td>
+
+      </tr>
+      <tr>
+        <td class="col-md-2">Linn:</td>
+        <td class=""><h4><strong>{{thing.position.linn}}</strong></h4></td>
+      </tr>
+      <tr>
+        <td class="col-md-2">Väljumine aadress: </td>
+        <td>{{thing.source_address.formatted_address}}</td>
+      </tr>
+      <tr>
+        <td class="col-md-2">Tarne aadress:</td>
+        <td>{{thing.dest_address.formatted_address}}</td>
+      </tr>
+      <tr>
+        <td class="col-md-2">Hind:</td>
+        <td class="col-md-8"><h4><strong>{{thing.price}}</strong></h4></td>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-sm-6">
+    <map center="58.6, 24.0" zoom="6">
+
+    <!--<marker position="{{thing.position}}" ng-repeat="thing in Things"></marker>-->
+
+  </map>
+
+  </div>
+
+
+    <div class="col-sm-12" >
+      <h3>Veo kirjeldus:</h3>
+      <div style="white-space:pre-wrap;"> {{thing.info.desc}}</div>
+    </div>
+
+  <div ng-show="isLoggedIn()" class="col-sm-12" >
+    <a ng-click="deleteThing(thing._id)" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+  </div>
+</div>

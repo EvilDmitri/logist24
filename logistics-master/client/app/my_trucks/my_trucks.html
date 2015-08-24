@@ -1,0 +1,33 @@
+<div class="wedo">
+  <div class="container">
+    <div class="wedo-main">
+
+      <div class="we-do-top">
+        <h3>{{'MY_TRUCKS' | translate}}</h3>
+      </div>
+
+      <div class="we-do-top">
+        <div id="items">
+          <div class="item" ng-repeat="truck in my_trucks">
+
+            <div class="item_description">
+              <!--<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />-->
+              <p><strong>{{truck.name}}</strong></p>
+              <p>{{truck.info.desc}}</p>
+            </div>
+
+            <!--<a href="#" class="buy">Buy this Product</a>-->
+          </div>
+
+
+
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+

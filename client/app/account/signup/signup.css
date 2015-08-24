@@ -1,0 +1,115 @@
+header.contextual {
+  background-color: #000;
+  padding: 24px 20px;
+  position: static;
+  z-index: 1;
+}
+header {
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+header.contextual .logo {
+    background: rgba(0, 0, 0, 0) url("/static/images/logista_logo.png") no-repeat scroll left top / 167px 23px;
+}
+header .logo {
+    height: 23px;
+    margin: 0 auto;
+    width: 167px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+.signup-wrapper {
+  margin: 0 auto;
+  width: 680px;
+}
+
+.signup-top .signup-top-images {
+    display: inline-block;
+    width: 23%;
+}
+
+.signup-top .signup-top-text {
+    display: inline-block;
+    margin-top: 40px;
+    vertical-align: top;
+    width: 73%;
+}
+
+.signup-top .signup-top-text .signup-top-text-title {
+    color: #1fbad6;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.signup-top .signup-top-text .signup-top-text-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+}
+.signup-top .signup-top-images .signup-top-phones {
+    background: rgba(0, 0, 0, 0) url("https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/phones-signup@1x.a391e0c6b53443a81cecc543cd8240f9.png") no-repeat scroll left top;
+    height: 235px;
+    margin-left: -55%;
+    width: 212px;
+}
+.form-container {
+    margin: 0 auto;
+    width: 70%;
+}
+.signup-form-section {
+    position: relative;
+}
+.signup-form-section {
+    margin-bottom: -25px;
+    padding-bottom: 50px;
+}
+.signup-form-section .signup-form-section-title {
+    font-size: 22px;
+    font-weight: 400;
+}
+.signup-form-section .signup-form-section-required {
+    font-size: 10px;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    top: 4px;
+}
+.form-group {
+    font-family: ff-clan-web-pro-wide,sans-serif;
+    padding-bottom: 19px;
+    width: 100%;
+}
+.form-group label {
+    color: #666;
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+.add-a-promo-code, .btn, .error-list, .form-group label, .sticker, h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}
+.signup-form-section .signup-form-section-number.blue {
+    border-color: #1fbad6;
+    border-left: 1px solid #1fbad6;
+    color: #1fbad6;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+.signup-form-section .signup-form-section-number {
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 50%;
+    color: #f1f1f1;
+    font-size: 14px;
+    height: 36px;
+    left: -75px;
+    padding: 7px 0 0 12px;
+    position: absolute;
+    top: 0;
+    width: 36px;
+    z-index: 10;
+}

@@ -1,0 +1,5537 @@
+
+<header class="contextual">
+  <div class="logo"></div>
+</header>
+
+<div class="signup-wrapper">
+  <section class="signup-top">
+    <div class="signup-top-images">
+      <div class="signup-top-phones"></div>
+    </div>
+    <div class="signup-top-text">
+      <div class="signup-top-text-title">
+        Registreeri konto
+      </div>
+      <div class="signup-top-text-subtitle">
+        <p>Tere tulemast Logista24! Veo tellimuse mobile rakenduse.</p>
+        <p>Registeeru &mdash; ja mõni minuti pärast Teil on võimalik broneerida reisi.</p>
+      </div>
+    </div>
+  </section>
+
+
+    <!--<div class="col-sm-12">-->
+      <!-- -->
+    <!--</div>-->
+
+      <section class="signup-form">
+
+      <form class="form" name="form" ng-submit="register(form)" novalidate>
+        <div class="signup-form-section">
+          <div class="signup-form-section-title">
+            <p>Isiklikku info</p>
+          </div>
+          <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
+                                            'has-error': form.email.$invalid && submitted }">
+            <label>E-post</label>
+
+            <input type="email" name="email" class="form-control" ng-model="user.email"
+                   required
+                   mongoose-error/>
+            <p class="help-block" ng-show="form.email.$error.email && submitted">
+              Ei tundu olema kehtiv e-posti.
+            </p>
+            <p class="help-block" ng-show="form.email.$error.required && submitted">
+              Milline on sinu e-posti aadress?
+            </p>
+            <p class="help-block" ng-show="form.email.$error.mongoose">
+              {{ errors.email }}
+            </p>
+          </div>
+
+            <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
+                                              'has-error': form.password.$invalid && submitted }">
+              <label>Salasõna</label>
+
+              <input type="password" name="password" class="form-control" ng-model="user.password"
+                     ng-minlength="3"
+                     required
+                     mongoose-error/>
+              <p class="help-block"
+                 ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+                Salasõna peab olema vähemalt 3 tähemärki.
+              </p>
+              <p class="help-block" ng-show="form.password.$error.mongoose">
+                {{ errors.password }}
+              </p>
+            </div>
+
+        </div>
+
+
+      <div class="signup-form-section">
+          <div class="signup-form-section-title">
+            <p>Profiil</p>
+          </div>
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+          <label>Nimi</label>
+
+          <input type="text" name="name" class="form-control" ng-model="user.name"
+                 required/>
+          <p class="help-block" ng-show="form.name.$error.required && submitted">
+            Nimi on vaja
+          </p>
+        </div>
+      </div>
+
+
+        <div>
+          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+            Rgisteeru
+          </button>
+
+          <!--<a class="btn btn-default btn-lg btn-register" href="/login">-->
+            <!--Login-->
+          <!--</a>-->
+        </div>
+
+
+      </form>
+  </section>
+
+
+<div>   <!--/Signup wrapper-->
+
+
+
+
+  <!--<section class="signup-form">-->
+  <!--<article class="form-container">-->
+  <!--<form autocomplete="on" method="POST" action="/signup_submit/" class="form-vertical">-->
+
+  <!--<div class="signup-form-section account">-->
+  <!--<div class="signup-form-section-title"><p>Личная информация</p></div>-->
+  <!--<div class="signup-form-section-required">Обязательно к заполнению</div>-->
+  <!--<div class="signup-form-section-number blue">1</div>-->
+  <!--<div class="signup-form-section-line"></div>-->
+
+
+
+
+
+  <!--<div class="form-group required ">-->
+
+
+
+
+
+
+  <!--<label for="email">Эл. почта</label>-->
+
+
+
+
+
+
+
+  <!--<input type="email" placeholder="name@example.com" id="email" name="email" value="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-position: right center; cursor: auto;">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+
+
+
+
+  <!--<div class="form-group required ">-->
+
+
+
+
+
+
+  <!--<label for="password">Пароль </label>-->
+
+
+
+
+
+
+
+  <!--<input type="password" placeholder="Минимум 5 символов" id="password" name="password" value="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACIUlEQVQ4EX2TOYhTURSG87IMihDsjGghBhFBmHFDHLWwSqcikk4RRKJgk0KL7C8bMpWpZtIqNkEUl1ZCgs0wOo0SxiLMDApWlgOPrH7/5b2QkYwX7jvn/uc//zl3edZ4PPbNGvF4fC4ajR5VrNvt/mo0Gr1ZPOtfgWw2e9Lv9+chX7cs64CS4Oxg3o9GI7tUKv0Q5o1dAiTfCgQCLwnOkfQOu+oSLyJ2A783HA7vIPLGxX0TgVwud4HKn0nc7Pf7N6vV6oZHkkX8FPG3uMfgXC0Wi2vCg/poUKGGcagQI3k7k8mcp5slcGswGDwpl8tfwGJg3xB6Dvey8vz6oH4C3iXcFYjbwiDeo1KafafkC3NjK7iL5ESFGQEUF7Sg+ifZdDp9GnMF/KGmfBdT2HCwZ7TwtrBPC7rQaav6Iv48rqZwg+F+p8hOMBj0IbxfMdMBrW5pAVGV/ztINByENkU0t5BIJEKRSOQ3Aj+Z57iFs1R5NK3EQS6HQqF1zmQdzpFWq3W42WwOTAf1er1PF2USFlC+qxMvFAr3HcexWX+QX6lUvsKpkTyPSEXJkw6MQ4S38Ljdbi8rmM/nY+CvgNcQqdH6U/xrYK9t244jZv6ByUOSiDdIfgBZ12U6dHEHu9TpdIr8F0OP692CtzaW/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-position: right center; cursor: auto;">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="signup-form-section profile">-->
+  <!--<div class="signup-form-section-title"><p>Профиль</p></div>-->
+  <!--<div class="signup-form-section-number">2</div>-->
+  <!--<div class="signup-form-section-line"></div>-->
+
+
+
+
+
+  <!--<div class="form-group required ">-->
+
+
+
+
+
+  <!--<label for="name">Имя </label>-->
+  <!--<div class="row form-row">-->
+  <!--<div class="col-md-6 col-xs-6 md-push-right-half sm-push-right-half xs-push-right-half">-->
+
+
+
+
+
+
+  <!--<input type="text" placeholder="Имя" id="first_name" name="first_name" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--<div class="col-md-6 col-xs-6 md-push-left-half xs-push-left-half">-->
+
+
+
+
+
+
+  <!--<input type="text" placeholder="Фамилия " id="last_name" name="last_name" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="form-group js-mobile-country required mobile-number">-->
+
+
+
+
+
+  <!--<label for="mobile">Номер мобильного</label>-->
+  <!--<select class="js-mobile-country required" id="mobile_country" name="mobile_country">-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="USA" none="" label="United States (+1)" value="US">United States</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+93" data-iso3="AFG" none="" label="Afghanistan (+93)" value="AF">Afghanistan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+355" data-iso3="ALB" none="" label="Albania (+355)" value="AL">Albania</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+213" data-iso3="DZA" none="" label="Algeria (+213)" value="DZ">Algeria</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="ASM" none="" label="American Samoa (+1)" value="AS">American Samoa</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+376" data-iso3="AND" none="" label="Andorra (+376)" value="AD">Andorra</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+244" data-iso3="AGO" none="" label="Angola (+244)" value="AO">Angola</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="AIA" none="" label="Anguilla (+1)" value="AI">Anguilla</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+672" data-iso3="ATA" none="" label="Antarctica (+672)" value="AQ">Antarctica</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-268" data-iso3="ATG" none="" label="Antigua and Barbuda (+1-268)" value="AG">Antigua and Barbuda</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+54" data-iso3="ARG" none="" label="Argentina (+54)" value="AR">Argentina</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+374" data-iso3="ARM" none="" label="Armenia (+374)" value="AM">Armenia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+297" data-iso3="ABW" none="" label="Aruba (+297)" value="AW">Aruba</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+61" data-iso3="AUS" none="" label="Australia (+61)" value="AU">Australia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+43" data-iso3="AUT" none="" label="Austria (+43)" value="AT">Austria</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+994" data-iso3="AZE" none="" label="Azerbaijan (+994)" value="AZ">Azerbaijan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+973" data-iso3="BHR" none="" label="Bahrain (+973)" value="BH">Bahrain</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+880" data-iso3="BGD" none="" label="Bangladesh (+880)" value="BD">Bangladesh</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-246" data-iso3="BRB" none="" label="Barbados (+1-246)" value="BB">Barbados</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+375" data-iso3="BLR" none="" label="Belarus (+375)" value="BY">Belarus</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+32" data-iso3="BEL" none="" label="Belgium (+32)" value="BE">Belgium</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+501" data-iso3="BLZ" none="" label="Belize (+501)" value="BZ">Belize</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+229" data-iso3="BEN" none="" label="Benin (+229)" value="BJ">Benin</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="BMU" none="" label="Bermuda (+1)" value="BM">Bermuda</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+975" data-iso3="BTN" none="" label="Bhutan (+975)" value="BT">Bhutan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+591" data-iso3="BOL" none="" label="Bolivia (+591)" value="BO">Bolivia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+387" data-iso3="BIH" none="" label="Bosnia and Herzegovina (+387)" value="BA">Bosnia and Herzegovina</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+267" data-iso3="BWA" none="" label="Botswana (+267)" value="BW">Botswana</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+" data-iso3="BVT" none="" label="Bouvet Island (+)" value="BV">Bouvet Island</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+55" data-iso3="BRA" none="" label="Brazil (+55)" value="BR">Brazil</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+246" data-iso3="IOT" none="" label="British Indian Ocean Territory (+246)" value="IO">British Indian Ocean Territory</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+673" data-iso3="BRN" none="" label="Brunei (+673)" value="BN">Brunei</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+359" data-iso3="BGR" none="" label="Bulgaria (+359)" value="BG">Bulgaria</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+226" data-iso3="BFA" none="" label="Burkina Faso (+226)" value="BF">Burkina Faso</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+257" data-iso3="BDI" none="" label="Burundi (+257)" value="BI">Burundi</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+855" data-iso3="KHM" none="" label="Cambodia (+855)" value="KH">Cambodia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+237" data-iso3="CMR" none="" label="Cameroon (+237)" value="CM">Cameroon</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="CAN" none="" label="Canada (+1)" value="CA">Canada</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+238" data-iso3="CPV" none="" label="Cape Verde (+238)" value="CV">Cape Verde</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="CYM" none="" label="Cayman Islands (+1)" value="KY">Cayman Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+236" data-iso3="CAF" none="" label="Central African Republic (+236)" value="CF">Central African Republic</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+235" data-iso3="TCD" none="" label="Chad (+235)" value="TD">Chad</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+56" data-iso3="CHL" none="" label="Chile (+56)" value="CL">Chile</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+86" data-iso3="CHN" none="" label="China, People's Republic of (+86)" value="CN">China, People's Republic of</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+61" data-iso3="CXR" none="" label="Christmas Island (+61)" value="CX">Christmas Island</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+61" data-iso3="CCK" none="" label="Cocos (Keeling) Islands (+61)" value="CC">Cocos (Keeling) Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+57" data-iso3="COL" none="" label="Colombia (+57)" value="CO">Colombia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+269" data-iso3="COM" none="" label="Comoros (+269)" value="KM">Comoros</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+242" data-iso3="COG" none="" label="Congo, Republic of the (Congo - Brazzaville) (+242)" value="CG">Congo, Republic of the (Congo - Brazzaville)</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+243" data-iso3="COD" none="" label="Congo, Democratic Republic of the (Congo - Kinshasa) (+243)" value="CD">Congo, Democratic Republic of the (Congo - Kinshasa)</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+682" data-iso3="COK" none="" label="Cook Islands (+682)" value="CK">Cook Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+506" data-iso3="CRI" none="" label="Costa Rica (+506)" value="CR">Costa Rica</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+225" data-iso3="CIV" none="" label="Cote d'Ivoire (Ivory Coast) (+225)" value="CI">Cote d'Ivoire (Ivory Coast)</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+385" data-iso3="HRV" none="" label="Croatia (+385)" value="HR">Croatia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+53" data-iso3="CUB" none="" label="Cuba (+53)" value="CU">Cuba</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+357" data-iso3="CYP" none="" label="Cyprus (+357)" value="CY">Cyprus</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+420" data-iso3="CZE" none="" label="Czech Republic (+420)" value="CZ">Czech Republic</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+45" data-iso3="DNK" none="" label="Denmark (+45)" value="DK">Denmark</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+253" data-iso3="DJI" none="" label="Djibouti (+253)" value="DJ">Djibouti</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-767" data-iso3="DMA" none="" label="Dominica (+1-767)" value="DM">Dominica</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="DOM" none="" label="Dominican Republic (+1)" value="DO">Dominican Republic</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+593" data-iso3="ECU" none="" label="Ecuador (+593)" value="EC">Ecuador</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+20" data-iso3="EGY" none="" label="Egypt (+20)" value="EG">Egypt</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+503" data-iso3="SLV" none="" label="El Salvador (+503)" value="SV">El Salvador</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+240" data-iso3="GNQ" none="" label="Equatorial Guinea (+240)" value="GQ">Equatorial Guinea</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+291" data-iso3="ERI" none="" label="Eritrea (+291)" value="ER">Eritrea</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+372" data-iso3="EST" none="" label="Estonia (+372)" value="EE">Estonia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+251" data-iso3="ETH" none="" label="Ethiopia (+251)" value="ET">Ethiopia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+500" data-iso3="FLK" none="" label="Falkland Islands (+500)" value="FK">Falkland Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+298" data-iso3="FRO" none="" label="Faroe Islands (+298)" value="FO">Faroe Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+679" data-iso3="FJI" none="" label="Fiji (+679)" value="FJ">Fiji</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+358" data-iso3="FIN" none="" label="Finland (+358)" value="FI">Finland</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+33" data-iso3="FRA" none="" label="France (+33)" value="FR">France</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+594" data-iso3="GUF" none="" label="French Guiana (+594)" value="GF">French Guiana</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+689" data-iso3="PYF" none="" label="French Polynesia (+689)" value="PF">French Polynesia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+" data-iso3="ATF" none="" label="French Southern Territories (+)" value="TF">French Southern Territories</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+241" data-iso3="GAB" none="" label="Gabon (+241)" value="GA">Gabon</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+995" data-iso3="GEO" none="" label="Georgia (+995)" value="GE">Georgia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+49" data-iso3="DEU" none="" label="Germany (+49)" value="DE">Germany</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+233" data-iso3="GHA" none="" label="Ghana (+233)" value="GH">Ghana</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+350" data-iso3="GIB" none="" label="Gibraltar (+350)" value="GI">Gibraltar</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+30" data-iso3="GRC" none="" label="Greece (+30)" value="GR">Greece</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+299" data-iso3="GRL" none="" label="Greenland (+299)" value="GL">Greenland</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-473" data-iso3="GRD" none="" label="Grenada (+1-473)" value="GD">Grenada</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+590" data-iso3="GLP" none="" label="Guadeloupe (+590)" value="GP">Guadeloupe</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="GUM" none="" label="Guam (+1)" value="GU">Guam</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+502" data-iso3="GTM" none="" label="Guatemala (+502)" value="GT">Guatemala</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+44" data-iso3="GGY" none="" label="Guernsey and Alderney (+44)" value="GG">Guernsey and Alderney</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+224" data-iso3="GIN" none="" label="Guinea (+224)" value="GN">Guinea</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+245" data-iso3="GNB" none="" label="Guinea-Bissau (+245)" value="GW">Guinea-Bissau</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+592" data-iso3="GUY" none="" label="Guyana (+592)" value="GY">Guyana</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+509" data-iso3="HTI" none="" label="Haiti (+509)" value="HT">Haiti</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+" data-iso3="HMD" none="" label="Heard and McDonald Islands (+)" value="HM">Heard and McDonald Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+504" data-iso3="HND" none="" label="Honduras (+504)" value="HN">Honduras</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+852" data-iso3="HKG" none="" label="Hong Kong (+852)" value="HK">Hong Kong</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+36" data-iso3="HUN" none="" label="Hungary (+36)" value="HU">Hungary</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+354" data-iso3="ISL" none="" label="Iceland (+354)" value="IS">Iceland</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+91" data-iso3="IND" none="" label="India (+91)" value="IN">India</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+62" data-iso3="IDN" none="" label="Indonesia (+62)" value="ID">Indonesia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+98" data-iso3="IRN" none="" label="Iran (+98)" value="IR">Iran</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+964" data-iso3="IRQ" none="" label="Iraq (+964)" value="IQ">Iraq</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+353" data-iso3="IRL" none="" label="Ireland (+353)" value="IE">Ireland</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+44" data-iso3="IMN" none="" label="Isle of Man (+44)" value="IM">Isle of Man</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+972" data-iso3="ISR" none="" label="Israel (+972)" value="IL">Israel</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+39" data-iso3="ITA" none="" label="Italy (+39)" value="IT">Italy</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-876" data-iso3="JAM" none="" label="Jamaica (+1-876)" value="JM">Jamaica</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+81" data-iso3="JPN" none="" label="Japan (+81)" value="JP">Japan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+44" data-iso3="JEY" none="" label="Jersey (+44)" value="JE">Jersey</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+962" data-iso3="JOR" none="" label="Jordan (+962)" value="JO">Jordan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+7" data-iso3="KAZ" none="" label="Kazakhstan (+7)" value="KZ">Kazakhstan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+254" data-iso3="KEN" none="" label="Kenya (+254)" value="KE">Kenya</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+686" data-iso3="KIR" none="" label="Kiribati (+686)" value="KI">Kiribati</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+965" data-iso3="KWT" none="" label="Kuwait (+965)" value="KW">Kuwait</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+996" data-iso3="KGZ" none="" label="Kyrgyzstan (+996)" value="KG">Kyrgyzstan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+358" data-iso3="ALA" none="" label="Aland Islands (+358)" value="AX">Aland Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+856" data-iso3="LAO" none="" label="Laos (+856)" value="LA">Laos</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+371" data-iso3="LVA" none="" label="Latvia (+371)" value="LV">Latvia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+961" data-iso3="LBN" none="" label="Lebanon (+961)" value="LB">Lebanon</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+266" data-iso3="LSO" none="" label="Lesotho (+266)" value="LS">Lesotho</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+231" data-iso3="LBR" none="" label="Liberia (+231)" value="LR">Liberia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+218" data-iso3="LBY" none="" label="Libya (+218)" value="LY">Libya</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+423" data-iso3="LIE" none="" label="Liechtenstein (+423)" value="LI">Liechtenstein</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+370" data-iso3="LTU" none="" label="Lithuania (+370)" value="LT">Lithuania</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+352" data-iso3="LUX" none="" label="Luxembourg (+352)" value="LU">Luxembourg</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+853" data-iso3="MAC" none="" label="Macao (+853)" value="MO">Macao</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+389" data-iso3="MKD" none="" label="Macedonia (+389)" value="MK">Macedonia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+261" data-iso3="MDG" none="" label="Madagascar (+261)" value="MG">Madagascar</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+265" data-iso3="MWI" none="" label="Malawi (+265)" value="MW">Malawi</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+60" data-iso3="MYS" none="" label="Malaysia (+60)" value="MY">Malaysia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+960" data-iso3="MDV" none="" label="Maldives (+960)" value="MV">Maldives</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+223" data-iso3="MLI" none="" label="Mali (+223)" value="ML">Mali</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+356" data-iso3="MLT" none="" label="Malta (+356)" value="MT">Malta</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+692" data-iso3="MHL" none="" label="Marshall Islands (+692)" value="MH">Marshall Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+596" data-iso3="MTQ" none="" label="Martinique (+596)" value="MQ">Martinique</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+222" data-iso3="MRT" none="" label="Mauritania (+222)" value="MR">Mauritania</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+230" data-iso3="MUS" none="" label="Mauritius (+230)" value="MU">Mauritius</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+269" data-iso3="MYT" none="" label="Mayotte (+269)" value="YT">Mayotte</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+52" data-iso3="MEX" none="" label="Mexico (+52)" value="MX">Mexico</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+691" data-iso3="FSM" none="" label="Micronesia (+691)" value="FM">Micronesia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+373" data-iso3="MDA" none="" label="Moldova (+373)" value="MD">Moldova</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+377" data-iso3="MCO" none="" label="Monaco (+377)" value="MC">Monaco</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+976" data-iso3="MNG" none="" label="Mongolia (+976)" value="MN">Mongolia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+382" data-iso3="MNE" none="" label="Montenegro (+382)" value="ME">Montenegro</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="MSR" none="" label="Montserrat (+1)" value="MS">Montserrat</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+212" data-iso3="MAR" none="" label="Morocco (+212)" value="MA">Morocco</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+258" data-iso3="MOZ" none="" label="Mozambique (+258)" value="MZ">Mozambique</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+95" data-iso3="MMR" none="" label="Myanmar (Burma) (+95)" value="MM">Myanmar (Burma)</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+264" data-iso3="NAM" none="" label="Namibia (+264)" value="NA">Namibia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+674" data-iso3="NRU" none="" label="Nauru (+674)" value="NR">Nauru</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+977" data-iso3="NPL" none="" label="Nepal (+977)" value="NP">Nepal</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+31" data-iso3="NLD" none="" label="Netherlands (+31)" value="NL">Netherlands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+599" data-iso3="ANT" none="" label="Netherlands Antilles (+599)" value="AN">Netherlands Antilles</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+687" data-iso3="NCL" none="" label="New Caledonia (+687)" value="NC">New Caledonia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+64" data-iso3="NZL" none="" label="New Zealand (+64)" value="NZ">New Zealand</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+505" data-iso3="NIC" none="" label="Nicaragua (+505)" value="NI">Nicaragua</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+227" data-iso3="NER" none="" label="Niger (+227)" value="NE">Niger</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+234" data-iso3="NGA" none="" label="Nigeria (+234)" value="NG">Nigeria</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+683" data-iso3="NIU" none="" label="Niue (+683)" value="NU">Niue</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+672" data-iso3="NFK" none="" label="Norfolk Island (+672)" value="NF">Norfolk Island</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="MNP" none="" label="Northern Mariana Islands (+1)" value="MP">Northern Mariana Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+850" data-iso3="PRK" none="" label="Korea, Democratic People's Republic of (North Korea) (+850)" value="KP">Korea, Democratic People's Republic of (North Korea)</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+47" data-iso3="NOR" none="" label="Norway (+47)" value="NO">Norway</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+968" data-iso3="OMN" none="" label="Oman (+968)" value="OM">Oman</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+92" data-iso3="PAK" none="" label="Pakistan (+92)" value="PK">Pakistan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+680" data-iso3="PLW" none="" label="Palau (+680)" value="PW">Palau</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+970" data-iso3="PSE" none="" label="Palestine (+970)" value="PS">Palestine</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+507" data-iso3="PAN" none="" label="Panama (+507)" value="PA">Panama</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+675" data-iso3="PNG" none="" label="Papua New Guinea (+675)" value="PG">Papua New Guinea</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+595" data-iso3="PRY" none="" label="Paraguay (+595)" value="PY">Paraguay</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+51" data-iso3="PER" none="" label="Peru (+51)" value="PE">Peru</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+63" data-iso3="PHL" none="" label="Philippines (+63)" value="PH">Philippines</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+" data-iso3="PCN" none="" label="Pitcairn (+)" value="PN">Pitcairn</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+48" data-iso3="POL" none="" label="Poland (+48)" value="PL">Poland</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+351" data-iso3="PRT" none="" label="Portugal (+351)" value="PT">Portugal</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="PRI" none="" label="Puerto Rico (+1)" value="PR">Puerto Rico</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+974" data-iso3="QAT" none="" label="Qatar (+974)" value="QA">Qatar</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+40" data-iso3="ROU" none="" label="Romania (+40)" value="RO">Romania</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+262" data-iso3="REU" none="" label="Reunion (+262)" value="RE">Reunion</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+7" data-iso3="RUS" selected="" label="Russia (+7)" value="RU">Russia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+250" data-iso3="RWA" none="" label="Rwanda (+250)" value="RW">Rwanda</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+590" data-iso3="BLM" none="" label="Saint Barthelemy (+590)" value="BL">Saint Barthelemy</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+290" data-iso3="SHN" none="" label="Saint Helena (+290)" value="SH">Saint Helena</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-869" data-iso3="KNA" none="" label="Saint Kitts and Nevis (+1-869)" value="KN">Saint Kitts and Nevis</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-758" data-iso3="LCA" none="" label="Saint Lucia (+1-758)" value="LC">Saint Lucia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+590" data-iso3="MAF" none="" label="Saint Martin (+590)" value="MF">Saint Martin</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+508" data-iso3="SPM" none="" label="Saint Pierre and Miquelon (+508)" value="PM">Saint Pierre and Miquelon</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-784" data-iso3="VCT" none="" label="Saint Vincent and the Grenadines (+1-784)" value="VC">Saint Vincent and the Grenadines</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+685" data-iso3="WSM" none="" label="Samoa (+685)" value="WS">Samoa</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+378" data-iso3="SMR" none="" label="San Marino (+378)" value="SM">San Marino</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+239" data-iso3="STP" none="" label="Sao Tome and Principe (+239)" value="ST">Sao Tome and Principe</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+966" data-iso3="SAU" none="" label="Saudi Arabia (+966)" value="SA">Saudi Arabia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+221" data-iso3="SEN" none="" label="Senegal (+221)" value="SN">Senegal</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+381" data-iso3="SRB" none="" label="Serbia (+381)" value="RS">Serbia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+248" data-iso3="SYC" none="" label="Seychelles (+248)" value="SC">Seychelles</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+232" data-iso3="SLE" none="" label="Sierra Leone (+232)" value="SL">Sierra Leone</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+65" data-iso3="SGP" none="" label="Singapore (+65)" value="SG">Singapore</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+421" data-iso3="SVK" none="" label="Slovakia (+421)" value="SK">Slovakia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+386" data-iso3="SVN" none="" label="Slovenia (+386)" value="SI">Slovenia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+677" data-iso3="SLB" none="" label="Solomon Islands (+677)" value="SB">Solomon Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+252" data-iso3="SOM" none="" label="Somalia (+252)" value="SO">Somalia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+27" data-iso3="ZAF" none="" label="South Africa (+27)" value="ZA">South Africa</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+500" data-iso3="SGS" none="" label="South Georgia and the South Sandwich Islands (+500)" value="GS">South Georgia and the South Sandwich Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+82" data-iso3="KOR" none="" label="Korea, Republic of (South Korea) (+82)" value="KR">Korea, Republic of (South Korea)</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+34" data-iso3="ESP" none="" label="Spain (+34)" value="ES">Spain</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+94" data-iso3="LKA" none="" label="Sri Lanka (+94)" value="LK">Sri Lanka</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+249" data-iso3="SDN" none="" label="Sudan (+249)" value="SD">Sudan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+597" data-iso3="SUR" none="" label="Suriname (+597)" value="SR">Suriname</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+47" data-iso3="SJM" none="" label="Svalbard and Jan Mayen (+47)" value="SJ">Svalbard and Jan Mayen</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+268" data-iso3="SWZ" none="" label="Swaziland (+268)" value="SZ">Swaziland</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+46" data-iso3="SWE" none="" label="Sweden (+46)" value="SE">Sweden</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+41" data-iso3="CHE" none="" label="Switzerland (+41)" value="CH">Switzerland</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+963" data-iso3="SYR" none="" label="Syria (+963)" value="SY">Syria</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+886" data-iso3="TWN" none="" label="Taiwan (ROC) (+886)" value="TW">Taiwan (ROC)</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+992" data-iso3="TJK" none="" label="Tajikistan (+992)" value="TJ">Tajikistan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+255" data-iso3="TZA" none="" label="Tanzania (+255)" value="TZ">Tanzania</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+66" data-iso3="THA" none="" label="Thailand (+66)" value="TH">Thailand</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-242" data-iso3="BHS" none="" label="Bahamas, The (+1-242)" value="BS">Bahamas, The</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+220" data-iso3="GMB" none="" label="Gambia, The (+220)" value="GM">Gambia, The</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+670" data-iso3="TLS" none="" label="Timor-Leste (East Timor) (+670)" value="TL">Timor-Leste (East Timor)</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+228" data-iso3="TGO" none="" label="Togo (+228)" value="TG">Togo</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+690" data-iso3="TKL" none="" label="Tokelau (+690)" value="TK">Tokelau</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+676" data-iso3="TON" none="" label="Tonga (+676)" value="TO">Tonga</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1-868" data-iso3="TTO" none="" label="Trinidad and Tobago (+1-868)" value="TT">Trinidad and Tobago</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+216" data-iso3="TUN" none="" label="Tunisia (+216)" value="TN">Tunisia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+90" data-iso3="TUR" none="" label="Turkey (+90)" value="TR">Turkey</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+993" data-iso3="TKM" none="" label="Turkmenistan (+993)" value="TM">Turkmenistan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="TCA" none="" label="Turks and Caicos Islands (+1)" value="TC">Turks and Caicos Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+688" data-iso3="TUV" none="" label="Tuvalu (+688)" value="TV">Tuvalu</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+256" data-iso3="UGA" none="" label="Uganda (+256)" value="UG">Uganda</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+380" data-iso3="UKR" none="" label="Ukraine (+380)" value="UA">Ukraine</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+971" data-iso3="ARE" none="" label="United Arab Emirates (+971)" value="AE">United Arab Emirates</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+44" data-iso3="GBR" none="" label="United Kingdom (+44)" value="GB">United Kingdom</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+" data-iso3="UMI" none="" label="United States Minor Outlying Islands (+)" value="UM">United States Minor Outlying Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+598" data-iso3="URY" none="" label="Uruguay (+598)" value="UY">Uruguay</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+998" data-iso3="UZB" none="" label="Uzbekistan (+998)" value="UZ">Uzbekistan</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+678" data-iso3="VUT" none="" label="Vanuatu (+678)" value="VU">Vanuatu</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+379" data-iso3="VAT" none="" label="Vatican City (+379)" value="VA">Vatican City</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+58" data-iso3="VEN" none="" label="Venezuela (+58)" value="VE">Venezuela</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+84" data-iso3="VNM" none="" label="Vietnam (+84)" value="VN">Vietnam</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="VGB" none="" label="British Virgin Islands (+1)" value="VG">British Virgin Islands</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+1" data-iso3="VIR" none="" label="Virgin Islands of the United States (+1)" value="VI">Virgin Islands of the United States</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+681" data-iso3="WLF" none="" label="Wallis and Futuna (+681)" value="WF">Wallis and Futuna</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+212" data-iso3="ESH" none="" label="Western Sahara (+212)" value="EH">Western Sahara</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+967" data-iso3="YEM" none="" label="Yemen (+967)" value="YE">Yemen</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+260" data-iso3="ZMB" none="" label="Zambia (+260)" value="ZM">Zambia</option>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option data-telephone_code="+263" data-iso3="ZWE" none="" label="Zimbabwe (+263)" value="ZW">Zimbabwe</option>-->
+
+
+
+  <!--</select>-->
+  <!--<div class="mobile-country-mask">-->
+  <!--<p class="mobile-country-mask-text"></p>-->
+  <!--</div>-->
+
+
+
+
+
+
+  <!--<input type="tel" placeholder="Телефон" id="mobile" name="mobile" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+
+
+
+
+  <!--<div class="form-group required ">-->
+
+
+
+
+
+
+  <!--<label for="language">Язык</label>-->
+
+  <!--<select class="" id="language" name="language">-->
+
+
+
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Azərbaycanca (Latın, Azərbaycan)" value="az_AZ">Azərbaycanca (Latın, Azərbaycan)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Bahasa Indonesia (Indonesia)" value="id_ID">Bahasa Indonesia (Indonesia)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Bahasa Melayu (Latin, Malaysia)" value="ms_MY">Bahasa Melayu (Latin, Malaysia)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Dansk (Danmark)" value="da_DK">Dansk (Danmark)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Deutsch" value="de">Deutsch</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Eesti (Eesti)" value="et_EE">Eesti (Eesti)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="English" value="en">English</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="English (United Kingdom)" value="en_GB">English (United Kingdom)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="English (United States)" value="en_US">English (United States)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Español" value="es">Español</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Español (Chile)" value="es_CL">Español (Chile)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Español (España)" value="es_ES">Español (España)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Español (México)" value="es_MX">Español (México)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Español (Perú)" value="es_PE">Español (Perú)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Filipino (Pilipinas)" value="tl_PH">Filipino (Pilipinas)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Français" value="fr">Français</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Français (Canada)" value="fr_CA">Français (Canada)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Italiano" value="it">Italiano</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Magyar (Magyarország)" value="hu_HU">Magyar (Magyarország)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Nederlands" value="nl">Nederlands</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Norsk Bokmål (Norge)" value="nb_NO">Norsk Bokmål (Norge)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Polski (Polska)" value="pl_PL">Polski (Polska)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Português (Brasil)" value="pt_BR">Português (Brasil)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Português (Portugal)" value="pt_PT">Português (Portugal)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Română (România)" value="ro_RO">Română (România)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Slovenčina (Slovensko)" value="sk_SK">Slovenčina (Slovensko)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Suomi (Suomi)" value="fi_FI">Suomi (Suomi)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Svenska" value="sv">Svenska</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Tiếng Việt (Việt Nam)" value="vi_VN">Tiếng Việt (Việt Nam)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Türkçe (Türkiye)" value="tr_TR">Türkçe (Türkiye)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Čeština (Česká Republika)" value="cs_CZ">Čeština (Česká Republika)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Ελληνικά" value="el">Ελληνικά</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="Български (България)" value="bg_BG">Български (България)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option selected="" label="Русский (Россия)" value="ru_RU">Русский (Россия)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="עברית (ישראל)" value="he_IL">עברית (ישראל)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="العربية (المملكة العربية السعودية)" value="ar_SA">العربية (المملكة العربية السعودية)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="ไทย (ไทย)" value="th_TH">ไทย (ไทย)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="中文 (简体中文, 中国)" value="zh_CN">中文 (简体中文, 中国)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="中文 (繁體中文, 台灣)" value="zh_TW">中文 (繁體中文, 台灣)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="中文 (繁體漢字, 中華人民共和國香港特別行政區)" value="zh_HK">中文 (繁體漢字, 中華人民共和國香港特別行政區)</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="日本語" value="ja">日本語</option>-->
+
+
+
+
+
+
+
+
+  <!--<option none="" label="한국어" value="ko">한국어</option>-->
+
+
+
+  <!--</select>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="signup-form-section payment">-->
+  <!--<div class="signup-form-section-title"><p>Оплата</p></div>-->
+
+  <!--<div class="payment-errors js-error-list">-->
+  <!--<ul></ul>-->
+  <!--</div>-->
+
+  <!--<div class="signup-form-section-number">3</div>-->
+  <!--<div class="signup-form-section-line"></div>-->
+
+  <!--<div hidden="" class="india-card">-->
+  <!--<div class="form-group required">-->
+  <!--<div class="row form-row">-->
+
+  <!--<select class="" id="india_payment_selection-india_payment" name="india_payment_selection">-->
+
+
+  <!--<option label="Используйте мобильный кошелек от Paytm" value="Используйте мобильный кошелек от Paytm">-->
+  <!--Используйте мобильный кошелек от Paytm-->
+  <!--</option>-->
+
+  <!--<option label="Использовать международную кредитную карту" value="Использовать международную кредитную карту">-->
+  <!--Использовать международную кредитную карту-->
+  <!--</option>-->
+
+  <!--</select>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<div hidden="" class="china-card">-->
+  <!--<div class="form-group required">-->
+
+  <!--<select id="china_payment_selection-china_payment" name="china_payment_selection">-->
+  <!--<option label="Используйте мобильный кошелек от Alipay" value="alipay_wallet">-->
+  <!--Используйте мобильный кошелек от Alipay-->
+  <!--</option>-->
+  <!--<option label="Использовать международную кредитную карту" value="use_international_card">-->
+  <!--Использовать международную кредитную карту-->
+  <!--</option>-->
+  <!--</select>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="credit-card-info">-->
+  <!--<div class="row form-row">-->
+  <!--<div class="col-md-9 col-xs-9 xs-push-right-half">-->
+
+
+
+
+  <!--<div class="form-group required ">-->
+
+
+
+
+
+
+  <!--<label for="card_number">Номер кредитной карты</label>-->
+
+
+
+
+
+
+
+  <!--<input type="tel" placeholder="1234 5678 9012 3456" id="card_number" name="card_number" value="">-->
+
+  <!--<div class="credit-card-icon defer_css_image_loading"></div>-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-md-3 col-xs-3 xs-push-left-half">-->
+
+
+
+
+  <!--<div class="form-group required ">-->
+
+
+
+
+
+
+  <!--<label for="card_code">CVV</label>-->
+
+
+
+
+
+
+
+  <!--<input type="tel" placeholder="123" id="card_code" name="card_code" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="form-group required">-->
+  <!--<div class="row form-row">-->
+  <!--<div class="col-md-8 col-xs-12 full-row-xs">-->
+
+
+
+
+
+  <!--<label for="card_expiration">Срок действия</label>-->
+  <!--<div class="row form-row">-->
+  <!--<div class="col-md-6 col-xs-6 xs-push-right-half col-xs-row">-->
+  <!--<select class="" id="card_expiration_month-month" name="card_expiration_month">-->
+  <!--<option selected="" disabled="" label="месяц" value="">месяц</option>-->
+
+  <!--<option label="1" value="1">-->
+  <!--1-->
+  <!--</option>-->
+
+  <!--<option label="2" value="2">-->
+  <!--2-->
+  <!--</option>-->
+
+  <!--<option label="3" value="3">-->
+  <!--3-->
+  <!--</option>-->
+
+  <!--<option label="4" value="4">-->
+  <!--4-->
+  <!--</option>-->
+
+  <!--<option label="5" value="5">-->
+  <!--5-->
+  <!--</option>-->
+
+  <!--<option label="6" value="6">-->
+  <!--6-->
+  <!--</option>-->
+
+  <!--<option label="7" value="7">-->
+  <!--7-->
+  <!--</option>-->
+
+  <!--<option label="8" value="8">-->
+  <!--8-->
+  <!--</option>-->
+
+  <!--<option label="9" value="9">-->
+  <!--9-->
+  <!--</option>-->
+
+  <!--<option label="10" value="10">-->
+  <!--10-->
+  <!--</option>-->
+
+  <!--<option label="11" value="11">-->
+  <!--11-->
+  <!--</option>-->
+
+  <!--<option label="12" value="12">-->
+  <!--12-->
+  <!--</option>-->
+
+  <!--</select>-->
+  <!--</div>-->
+  <!--<div class="col-md-6 col-xs-6 xs-push-left-half col-xs-row">-->
+
+  <!--<select class="" id="card_expiration_year-year" name="card_expiration_year">-->
+  <!--<option selected="" disabled="" label="год" value="">год</option>-->
+
+  <!--<option label="2015" value="2015">-->
+  <!--2015-->
+  <!--</option>-->
+
+  <!--<option label="2016" value="2016">-->
+  <!--2016-->
+  <!--</option>-->
+
+  <!--<option label="2017" value="2017">-->
+  <!--2017-->
+  <!--</option>-->
+
+  <!--<option label="2018" value="2018">-->
+  <!--2018-->
+  <!--</option>-->
+
+  <!--<option label="2019" value="2019">-->
+  <!--2019-->
+  <!--</option>-->
+
+  <!--<option label="2020" value="2020">-->
+  <!--2020-->
+  <!--</option>-->
+
+  <!--<option label="2021" value="2021">-->
+  <!--2021-->
+  <!--</option>-->
+
+  <!--<option label="2022" value="2022">-->
+  <!--2022-->
+  <!--</option>-->
+
+  <!--<option label="2023" value="2023">-->
+  <!--2023-->
+  <!--</option>-->
+
+  <!--<option label="2024" value="2024">-->
+  <!--2024-->
+  <!--</option>-->
+
+  <!--<option label="2025" value="2025">-->
+  <!--2025-->
+  <!--</option>-->
+
+  <!--<option label="2026" value="2026">-->
+  <!--2026-->
+  <!--</option>-->
+
+  <!--<option label="2027" value="2027">-->
+  <!--2027-->
+  <!--</option>-->
+
+  <!--<option label="2028" value="2028">-->
+  <!--2028-->
+  <!--</option>-->
+
+  <!--<option label="2029" value="2029">-->
+  <!--2029-->
+  <!--</option>-->
+
+  <!--<option label="2030" value="2030">-->
+  <!--2030-->
+  <!--</option>-->
+
+  <!--<option label="2031" value="2031">-->
+  <!--2031-->
+  <!--</option>-->
+
+  <!--<option label="2032" value="2032">-->
+  <!--2032-->
+  <!--</option>-->
+
+  <!--<option label="2033" value="2033">-->
+  <!--2033-->
+  <!--</option>-->
+
+  <!--<option label="2034" value="2034">-->
+  <!--2034-->
+  <!--</option>-->
+
+  <!--</select>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-md-4 col-xs-12">-->
+
+
+
+
+
+  <!--<label for="billing_zip">Почтовый индекс</label>-->
+
+
+
+
+
+
+  <!--<input type="text" placeholder="94103" id="billing_zip" name="billing_zip" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div hidden="" class="paytm">-->
+  <!--<div class="form-group required">-->
+  <!--<p>We'll set you up with Paytm Wallet using the phone number and email you have above.-->
+  <!--If you have an existing wallet, we'll connect with it.</p>-->
+  <!--<p> Подробнее о <a href="http://paytm.com">Paytm</a>.</p>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <!--<div hidden="" class="alipay">-->
+  <!--<div class="form-group required">-->
+  <!--<p>Мы создадим ваш кошелек Alipay через указанный ниже аккаунт. Если у вас уже есть кошелек, мы подключим его.</p>-->
+  <!--<p>Подробнее об <a href="https://www.alipay.com">Alipay</a>.</p>-->
+  <!--</div>-->
+  <!--<div class="alipay-id">-->
+
+
+
+
+  <!--<div class="form-group  required ">-->
+
+
+
+
+
+
+  <!--<label for="alipay_account">Аккаунт Alipay</label>-->
+
+
+
+
+
+
+
+  <!--<input type="text" placeholder="Адрес эл. почты/номер телефона" id="alipay_account" name="alipay_account" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div hidden="" class="alipay-phone">-->
+
+
+
+
+  <!--<div class="form-group  ">-->
+
+
+
+
+
+
+  <!--<label for="alipay_phone_number">Телефон Alipay</label>-->
+
+
+
+
+
+
+
+  <!--<input type="tel" placeholder="" id="alipay_phone_number" name="alipay_phone_number" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+
+
+  <!--<div class="add-a-promo-code">Добавить промо-код</div>-->
+  <!--<div style="display:none" class="promo-code-wrapper">-->
+  <!--<div class="form-group ">-->
+
+
+
+
+
+
+  <!--<input type="text" placeholder="Промо-код " id="promotion_code" name="promotion_code" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+  <!--</div>-->
+
+
+  <!--</div>-->
+
+
+
+
+
+
+
+
+
+  <!--<input type="hidden" placeholder="form.placeholder.location_country" id="location_country" name="location_country" value="US">-->
+
+  <!--<div class="error-notice"></div>-->
+
+
+
+
+
+
+
+
+  <!--<input type="hidden" placeholder="form.placeholder.signup_form" id="signup_form" name="signup_form" value="website">-->
+
+  <!--<div class="error-notice"></div>-->
+
+
+
+
+
+
+
+
+  <!--<input type="hidden" placeholder="form.placeholder.client_id" id="client_id" name="client_id" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+
+
+
+
+
+
+
+
+  <!--<input type="hidden" placeholder="form.placeholder.latitude" id="latitude" name="latitude" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+
+
+
+
+
+
+
+
+  <!--<input type="hidden" placeholder="form.placeholder.longitude" id="longitude" name="longitude" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+
+
+
+
+
+
+
+
+
+  <!--<input type="hidden" placeholder="form.placeholder.f" id="f" name="f" value="">-->
+
+  <!--<div class="error-notice"></div>-->
+
+
+
+
+
+
+
+
+
+
+
+  <!--<input type="hidden" placeholder="form.placeholder.alipay_signup" id="alipay_signup" name="alipay_signup" value="True">-->
+
+  <!--<div class="error-notice"></div>-->
+
+
+
+  <!--<div>-->
+  <!--<div id="submit_error_msg" type="hidden"></div>-->
+  <!--<div class="error-notice"></div>-->
+  <!--</div>-->
+
+  <!--<div class="signup-form-section submit">-->
+  <!--<div class="col-md-12">-->
+  <!--<img data-src="https://d1a3f4spazzrp4.cloudfront.net/free-candy/images/gfx/loader.a5b022ab0fad102f521a454df3ceb117.gif" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=" class="loader defer_image_loading">-->
+
+  <!--<div class="form-group">-->
+
+
+  <!--<button class="btn btn-primary js-submit disabled" type="submit">Создать аккаунт</button>-->
+  <!--</div>-->
+  <!--<div class="signup-form-section-notice">Просим заполнить все обязательные (<span class="star">*</span>) поля.</div>-->
+  <!--</div>-->
+  <!--<div class="signup-form-section-number"></div>-->
+  <!--</div>-->
+
+  <!--<div class="form-group agree-terms">-->
+  <!--<p>Нажимая кнопку “Создать аккаунт”, Вы принимаете <a href="https://www.uber.com/legal/terms">Условия</a> и <a href="https://www.uber.com/legal/privacy">Политику конфиденциальности</a> Убер.</p>-->
+  <!--</div>-->
+
+  <!--</form>-->
+  <!--</article>-->
+  <!--</section>-->
+  <!--</div>-->
+</div>
+
+
+

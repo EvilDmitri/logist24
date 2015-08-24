@@ -1,0 +1,47 @@
+
+<div class="wedo">
+  <div class="container">
+    <div class="wedo-main">
+
+
+      <div class="we-do-top">
+        <div id="items">
+          <div class="item" ng-repeat="vedu in Veod">
+
+            <div class="item_description">
+              <!--<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />-->
+              <p><strong>{{vedu.name}}</strong></p>
+              <p>{{vedu.info.desc}}</p>
+            </div>
+
+            <span>{{vedu.price}} &#8364;</span><a ng-href="/thing/{{vedu._id}}" class="buy">{{ 'LOOK' | translate }}</a>
+            <!--<a href="#" class="buy">Buy this Product</a>-->
+          </div>
+
+
+
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+
+
+      <div ng-include="'components/map/map.html'"></div>
+
+      <div class="we-do-top">
+        <h3><a ng-href="/new_route">{{ 'NEW_TRUCK' | translate }}</a></h3>
+        <p>{{ 'NEW_TRUCK_TEXT' | translate }}</p>
+      </div>
+
+
+      <div class="clearfix"> </div>
+    </div>
+
+
+
+  <div>
+
+  </div>
+  </div>
+</div>
+
+

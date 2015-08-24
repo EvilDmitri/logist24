@@ -1,0 +1,20 @@
+map
+{
+  height: 400px;
+  width: 100%;
+  left: 50%;
+}
+
+div[ng-controller='MapCtrl'] {
+  position: relative;
+}
+div[ng-controller='MapCtrl'] #panel {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}

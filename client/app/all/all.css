@@ -1,0 +1,59 @@
+#items{
+  float:left;
+  padding:22px 0 0 0;
+  width:770px;
+}
+.item{
+  width:241px;
+  height:265px;
+  float:left;
+  background-image:url(/static/images/items/item_bg.gif);
+  background-position:top left;
+  background-repeat:no-repeat;
+  padding:0 12px 15px 0;
+  display:inline;
+}
+.item img{
+  margin:26px 0 0 25px;
+}
+.item span{
+  display:block;
+  float:left;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:18px;
+  color:#E9410E;
+  width:102px;
+  padding:0 0 0 20px;
+}
+
+.item_description{
+  width: 202px;
+  height: 173px;
+  margin:26px 0 0 25px;
+}
+.view{
+  display:block;
+  float:left;
+  line-height:18px;
+  margin:3px 3px 0 0;
+  width:41px;
+  text-align:center;
+  background-image:url(/static/images/items/view_bg.gif);
+  background-position:top left;
+  background-repeat:no-repeat;
+  color:#fff;
+  text-decoration:none
+}
+.buy{
+  display:block;
+  float:right;
+  line-height:18px;
+  margin:3px 3px 0 0;
+  width:92px;
+  text-align:center;
+  background-image:url(/static/images/items/buy_bg.gif);
+  background-position:top left;
+  background-repeat:no-repeat;
+  color:#CAFF34;
+  text-decoration:none
+}
