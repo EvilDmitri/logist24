@@ -10,7 +10,8 @@ angular.module('logistaApp', [
   'ngMap',
   'google.places',
   'flow',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+    'dcbImgFallback'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

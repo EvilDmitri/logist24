@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('logistaApp')
-  .controller('ThingCtrl', function ($scope, $http, $location, socket, $stateParams) {
+  .controller('ThingCtrl', function ($scope, $http, $location, socket, $stateParams, Auth) {
 
 
     $scope.id = $stateParams.id;
@@ -11,10 +11,19 @@ angular.module('logistaApp')
     $http.get('/api/things/'+$scope.id).success(function(awesomeThing) {
       $scope.thing = awesomeThing;
       //console.log(awesomeThing);
+      getCarrier(awesomeThing.owner);
       addMarker(awesomeThing);
 
     });
 
+
+
+    function getCarrier(id){
+      $http.get('/api/users/'+id).success(function(User) {
+        console.log(User);
+          $scope.user = User;
+      });
+    }
 
     // Just a sample
     $scope.deleteThing = function(id) {
