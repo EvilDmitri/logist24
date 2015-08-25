@@ -13,9 +13,10 @@
 
       <div class="logo pull-left">
         <h1>
-          <a ng-href="/"><p>Logista<span style="color:darkblue">24</span></p></a>
+          <a ng-href="/"><p>Logista<span style="color:blue">24</span></p></a>
         </h1>
       </div>
+
 
       <ul class="nav navbar-nav">
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
@@ -26,7 +27,7 @@
         <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
       </ul>
 
-
+      <!--<div class="logo"><img src="/static/images/logista-logo.png"/></div>-->
 
 
       <ul class="nav navbar-nav navbar-right">
