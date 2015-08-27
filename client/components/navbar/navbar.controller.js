@@ -22,6 +22,11 @@ angular.module('logistaApp')
         'title': 'Kõik',
         'description': ['Kõik koormad'],
         'link': '/loads'
+      },
+      {
+        'title': 'Otsi',
+        'description': ['Otsing'],
+        'link': '/search'
       }
       //,
       //{

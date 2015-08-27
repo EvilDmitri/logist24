@@ -3,8 +3,8 @@
 angular.module('logistaApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('loads', {
-        url: '/loads',
+      .state('search', {
+        url: '/search',
         data: {pageTitle: 'All loads'},
         views: {
           'main': {
@@ -12,9 +12,9 @@ angular.module('logistaApp')
             controller: 'MainCtrl'
           }
           ,
-          'content@loads': {
-            templateUrl: 'app/loads/loads.html',
-            controller: 'LoadsCtrl'
+          'content@search': {
+            templateUrl: 'app/search/search.html',
+            controller: 'SearchCtrl'
           }
         }
       });
