@@ -17,6 +17,11 @@ angular.module('logistaApp')
         'title': 'NEW',
         'description': ['New route'],
         'link': '/new_route'
+      },
+      {
+        'title': 'Kõik',
+        'description': ['Kõik koormad'],
+        'link': '/loads'
       }
       //,
       //{
