@@ -10,5 +10,5 @@ var CustomerInfoSchema = new Schema({
 });
 
 
-module.exports.CustomerSchema = CustomerInfoSchema;
-module.exports = mongoose.model('Customer', CustomerInfoSchema);
+module.exports.CustomerInfoSchema = CustomerInfoSchema;
+module.exports = mongoose.model('CustomerInfo', CustomerInfoSchema);
