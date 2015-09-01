@@ -55,19 +55,19 @@ angular.module('logistaApp')
       if ($scope.purchase_form.$valid) {
 
         if ($scope.thing.source_address.address_components.length>3){
-          var region  = $scope.thing.source_address.address_components[4].long_name;
-          var lastIndex = region.lastIndexOf(" ");
-          region = region.substring(0, lastIndex);
+          //var region  = $scope.thing.source_address.address_components[4].long_name;
+          //var lastIndex = region.lastIndexOf(" ");
+          //region = region.substring(0, lastIndex);
 
-          var city = $scope.thing.source_address.address_components[3].long_name;
+          //var city = $scope.thing.source_address.address_components[3].long_name;
         }
 
         $scope.thing.position = {
           lat:$scope.thing.source_address.geometry.location.lat(),
           lng:$scope.thing.source_address.geometry.location.lng(),
-          formatted_address: $scope.thing.source_address.formatted_address,
-          maakond: region,
-          linn:  city
+          formatted_address: $scope.thing.source_address.formatted_address
+          //maakond: region,
+          //linn:  city
         };
 
 

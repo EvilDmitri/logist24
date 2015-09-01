@@ -10,7 +10,8 @@ angular.module('logistaApp')
     });
 
     var image = {
-      url: '/static/images/map/arrow_up_blue.png'
+      //url: '/static/images/map/arrow_up_blue.png'
+      url: '/static/images/map/yellow_pin.png'
       ,
       //size: new google.maps.Size(parseFloat(20), parseFloat(32)),
       origin: new google.maps.Point(0, 0)
@@ -60,7 +61,7 @@ angular.module('logistaApp')
 
     $http.get('/api/things').success(function(Things) {
       $scope.Things = Things;
-      console.log(Things);
+      //console.log(Things);
 
       var all_length = Things.length;
       for (var i=0; i<all_length ; i++) {
