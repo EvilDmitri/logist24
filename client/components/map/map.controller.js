@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('logistaApp')
-  .controller('MapCtrl', function ($scope, $http, $timeout, socket) {
+  .controller('MapCtrl', function ($scope, $http, $timeout, socket, $filter) {
 
     $scope.$on('mapInitialized', function(event, map) {
       //var latlng = new google.maps.LatLng("58.6, 24.0");
@@ -27,8 +27,11 @@ angular.module('logistaApp')
       var lng = thing.position.lng;
       var latlng = new google.maps.LatLng(lat, lng);
 
+      var infoText = $filter('limitTo')(thing.info.desc, 20);
+      infoText += thing.info.desc.length > 20 ? '...' : '';
+
       info[i] = new google.maps.InfoWindow({
-        content: '<h2>'+ thing.name +'</h2>' + thing.info.desc + '<br><strong>Väljumine: </strong>' + thing.source_address.formatted_address +
+        content: '<h2>'+ thing.name +'</h2>' + infoText + '<br><strong>Väljumine: </strong>' + thing.source_address.formatted_address +
         '<br><strong>Tarne: </strong>' + thing.dest_address.formatted_address +
         '<br><a href="/thing/' + thing._id + '">Vaata</a>'
       });

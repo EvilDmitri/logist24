@@ -54,12 +54,14 @@
   </div>
 
 
-    <div class="col-sm-12" >
+    <div class="col-sm-6" >
       <h3>Veo kirjeldus:</h3>
-      <div style="white-space:pre-wrap;"> {{thing.info.desc}}</div>
+      <div style="white-space:pre-wrap; word-wrap: break-word;"> {{thing.info.desc}}</div>
     </div>
 
+
   <div ng-show="isLoggedIn()" class="col-sm-12" >
+
     <a ng-click="deleteThing(thing._id)" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
   </div>
 </div>

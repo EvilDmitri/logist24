@@ -3,6 +3,7 @@
 angular.module('logistaApp')
   .controller('ThingCtrl', function ($scope, $http, $location, socket, $stateParams, Auth) {
 
+    $scope.isLoggedIn = Auth.isLoggedIn;
 
     $scope.id = $stateParams.id;
     //console.log('location', $scope.id);

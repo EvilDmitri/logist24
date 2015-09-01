@@ -50,9 +50,10 @@ angular.module('logistaApp')
     $scope.createThing = function() {
       //console.log($scope.thing.address.geometry.location.lat(), $scope.thing.address.geometry.location.lng());
       //console.log($scope.thing.address.address_components);
-
+      console.log($scope.thing);
       //Check for errors
       if ($scope.purchase_form.$valid) {
+
         if ($scope.thing.source_address.address_components.length>3){
           var region  = $scope.thing.source_address.address_components[4].long_name;
           var lastIndex = region.lastIndexOf(" ");
@@ -70,7 +71,6 @@ angular.module('logistaApp')
         };
 
 
-        console.log($scope.thing);
         addNew($scope.thing);
 
       } else {

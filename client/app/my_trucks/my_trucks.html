@@ -13,7 +13,7 @@
             <div class="item_description">
               <!--<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />-->
               <p><strong>{{truck.name}}</strong></p>
-              <p>{{truck.info.desc}}</p>
+              <p>{{truck.info.desc | limitTo: 20}}{{truck.info.desc.length > 20 ? '...' : ''}}</p>
             </div>
 
             <!--<a href="#" class="buy">Buy this Product</a>-->

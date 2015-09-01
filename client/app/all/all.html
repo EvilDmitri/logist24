@@ -11,7 +11,7 @@
             <div class="item_description">
               <!--<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />-->
               <p><strong>{{vedu.name}}</strong></p>
-              <p>{{vedu.info.desc}}</p>
+              <p style="word-wrap: break-word;">{{vedu.info.desc | limitTo: 100}}{{vedu.info.desc.length > 100 ? '...' : ''}}</p>
             </div>
 
             <span>{{vedu.price}} &#8364;</span><a ng-href="/thing/{{vedu._id}}" class="buy">{{ 'LOOK' | translate }}</a>
