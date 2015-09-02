@@ -49,10 +49,11 @@ angular.module('logistaApp', [
 
   .run(function ($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
-    $rootScope.$on('$stateChangeStart', function (event, next) {
+    $rootScope.$on('$stateChangeStart', function (event, next, nextParams) {
       Auth.isLoggedInAsync(function(loggedIn) {
         if (next.authenticate && !loggedIn) {
-          event.preventDefault();
+          $rootScope.returnToState = next.url;
+          $rootScope.returnToStateParams = nextParams.Id;
           $location.path('/login');
         }
       });

@@ -6,15 +6,8 @@ angular.module('logistaApp')
       .state('all', {
         url: '/',
         data: {pageTitle: 'Main'},
-        views: {
-          'main': {
-            templateUrl: 'app/main/main.html',
-            controller: 'MainCtrl'
-          },
-          'content@all': {
-            templateUrl: 'app/all/all.html',
-            controller: 'AllCtrl'
-          }
-        }
+        templateUrl: 'app/all/all.html',
+        controller: 'AllCtrl'
+
       });
   });

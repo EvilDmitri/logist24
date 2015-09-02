@@ -6,16 +6,7 @@ angular.module('logistaApp')
       .state('veod', {
         url: '/veod',
         data: {pageTitle: 'Veod'},
-        views: {
-          'main': {
-            templateUrl: 'app/main/main.html',
-            controller: 'MainCtrl'
-          }
-          ,
-          'content@veod': {
-            templateUrl: 'app/transport/transport.html',
-            controller: 'TransportCtrl'
-          }
-        }
+        templateUrl: 'app/transport/transport.html',
+        controller: 'TransportCtrl'
       });
   });

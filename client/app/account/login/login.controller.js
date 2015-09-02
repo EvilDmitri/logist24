@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('logistaApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location) {
+  .controller('LoginCtrl', function ($scope, Auth, $location, $rootScope) {
+
+    console.log($rootScope);
     $scope.user = {};
     $scope.errors = {};
 
@@ -14,8 +16,9 @@ angular.module('logistaApp')
           password: $scope.user.password
         })
         .then( function() {
-          // Logged in, redirect to home
-          $location.path('/');
+          // Logged in, redirect to returnToState
+
+          $location.path($rootScope.returnToState);
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
