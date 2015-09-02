@@ -3,7 +3,7 @@
 angular.module('logistaApp')
   .controller('LoginCtrl', function ($scope, Auth, $location, $rootScope) {
 
-    console.log($rootScope);
+    //console.log($rootScope);
     $scope.user = {};
     $scope.errors = {};
 
@@ -17,8 +17,11 @@ angular.module('logistaApp')
         })
         .then( function() {
           // Logged in, redirect to returnToState
-
-          $location.path($rootScope.returnToState);
+          var url = $rootScope.returnToState;
+            if($rootScope.returnToStateParams){
+              url = url + '/' + $rootScope.returnToStateParams;
+            }
+          $location.path(url);
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

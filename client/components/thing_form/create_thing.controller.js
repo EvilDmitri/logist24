@@ -4,10 +4,9 @@ angular.module('logistaApp')
   .controller('CreateCtrl', function ($scope, $http, Auth, $location) {
 
     $scope.isLoggedIn = Auth.isLoggedIn;
-    if (!$scope.isLoggedIn()){
-
-      $location.path('/login');
-    }
+    //if (!$scope.isLoggedIn()){
+    //  $location.path('/login');
+    //}
     $scope.getCurrentUser = Auth.getCurrentUser;
 
     var user = Auth.getCurrentUser();
@@ -59,32 +58,37 @@ angular.module('logistaApp')
           //var lastIndex = region.lastIndexOf(" ");
           //region = region.substring(0, lastIndex);
 
-          //var city = $scope.thing.source_address.address_components[3].long_name;
+
+          // Get city name
+          var comp = $scope.thing.source_address.address_components;
+          var length = comp.length;
+          var city = '';
+          for (var i=0; i<length; i++){
+            if (comp[i].types[0] == 'administrative_area_level_2') {
+              city = comp[i].long_name;
+              break;
+            }
+          }
         }
 
         $scope.thing.position = {
           lat:$scope.thing.source_address.geometry.location.lat(),
           lng:$scope.thing.source_address.geometry.location.lng(),
-          formatted_address: $scope.thing.source_address.formatted_address
+          formatted_address: $scope.thing.source_address.formatted_address,
           //maakond: region,
-          //linn:  city
+          linn:  city
         };
-
 
         addNew($scope.thing);
 
       } else {
         $scope.purchase_form.submitted = true;
       }
-
     };
 
-
-
-
-
-
   })
+
+
 
   .config(['flowFactoryProvider', function (flowFactoryProvider) {
     flowFactoryProvider.defaults = {
