@@ -31,7 +31,8 @@ angular.module('logistaApp')
         source_address: $scope.thing.source_address,
         dest_address: $scope.thing.dest_address,
         position: $scope.thing.position,
-        viewed: 0
+        viewed: 0,
+        createdOn: Date.now()
       });
       $scope.thing = '';
     }
@@ -41,7 +42,7 @@ angular.module('logistaApp')
       componentRestrictions: { country: 'ee' }
     };
 
-    $scope.thing = {
+    var route = {
      source_address:null,
      dest_address:null
     };
@@ -53,33 +54,33 @@ angular.module('logistaApp')
       //Check for errors
       if ($scope.purchase_form.$valid) {
 
-        if ($scope.thing.source_address.address_components.length>3){
-          //var region  = $scope.thing.source_address.address_components[4].long_name;
-          //var lastIndex = region.lastIndexOf(" ");
-          //region = region.substring(0, lastIndex);
-
-
-          // Get city name
-          var comp = $scope.thing.source_address.address_components;
-          var length = comp.length;
-          var city = '';
-          for (var i=0; i<length; i++){
-            if (comp[i].types[0] == 'administrative_area_level_2') {
-              city = comp[i].long_name;
-              break;
-            }
+        // Get start city name
+        var comp = $scope.thing.source_address.address_components;
+        var length = comp.length;
+        for (var i=0; i<length; i++){
+          if (comp[i].types[0] == 'administrative_area_level_2') {
+            route.route_start = comp[i].long_name;
+            break;
           }
         }
 
-        $scope.thing.position = {
+        // Get end city name
+        comp = $scope.thing.dest_address.address_components;
+        length = comp.length;
+        for (i=0; i<length; i++){
+          if (comp[i].types[0] == 'administrative_area_level_2') {
+            route.route_end = comp[i].long_name;
+            break;
+          }
+        }
+
+        route.position = {
           lat:$scope.thing.source_address.geometry.location.lat(),
           lng:$scope.thing.source_address.geometry.location.lng(),
           formatted_address: $scope.thing.source_address.formatted_address,
-          //maakond: region,
-          linn:  city
         };
 
-        addNew($scope.thing);
+        addNew(route);
 
       } else {
         $scope.purchase_form.submitted = true;

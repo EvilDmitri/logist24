@@ -11,8 +11,8 @@
         <table class="table table-striped">
           <tbody>
           <tr ng-repeat="load in Loads" >
-            <td class="col-md-2 text-left"><strong>{{load.name}}</strong></td>
-            <td class="col-md-4 text-left">{{load.info.desc | limitTo: 20}}{{load.info.desc.length > 20 ? '...' : ''}}</td>
+            <td class="col-md-2 text-left"><strong ng-bind-html="load.name"></strong></td>
+            <td class="col-md-4 text-left" >{{load.info.desc | limitTo: 20}}{{load.info.desc.length > 20 ? '...' : ''}}</td>
             <td class="col-md-4"><a ng-href="/thing/{{load._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
           </tr>
           </tbody>

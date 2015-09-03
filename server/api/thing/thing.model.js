@@ -12,9 +12,14 @@ var ThingSchema = new Schema({
   info: Object,
   source_address: Object,
   dest_address: Object,
+  route_start: String,
+  route_end: String,
   position: Object,
   viewed: Number,
-  active: Boolean
+  active: Boolean,
+  createdOn: {
+    type: Date
+  }
 });
 
 module.exports = mongoose.model('Thing', ThingSchema);

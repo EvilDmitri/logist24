@@ -20,7 +20,7 @@
 
       <ul class="nav navbar-nav">
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}">{{item.title | translate}}</a>
+            <a ng-href="{{item.link}}" ng-bind="item.title | translate"></a>
         </li>
 
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/my_trucks')}"><a ng-href="/my_trucks">Minu veod</a></li>
