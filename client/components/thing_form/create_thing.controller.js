@@ -13,11 +13,17 @@ angular.module('logistaApp')
     console.log(user);
 
     $scope.bodies = [
-      {id:1, name:'Kaubik'},
-      {id:2, name:'Veoauto'}
+      {id:1, name:'Järelkäru'},
+      {id:2, name:'Väike kaubik'},
+      {id:3, name:'Suur kaubik'},
+      {id:4, name:'Furgoon'},
+      {id:5, name:'Kallur'},
+      {id:6, name:'Sadulveok'},
+      {id:7, name:'Veoauto'}
+
     ];
 
-    function addNew() {
+    function addNew(route) {
       if($scope.thing === '') {
         return;
       }
@@ -30,7 +36,9 @@ angular.module('logistaApp')
         info: $scope.thing.info,
         source_address: $scope.thing.source_address,
         dest_address: $scope.thing.dest_address,
-        position: $scope.thing.position,
+        route_start: route.route_start,
+        route_end: route.route_end,
+        position: route.position,
         viewed: 0,
         createdOn: Date.now()
       });
@@ -77,8 +85,10 @@ angular.module('logistaApp')
         route.position = {
           lat:$scope.thing.source_address.geometry.location.lat(),
           lng:$scope.thing.source_address.geometry.location.lng(),
-          formatted_address: $scope.thing.source_address.formatted_address,
+          formatted_address: $scope.thing.source_address.formatted_address
         };
+
+        console.log(route.position);
 
         addNew(route);
 
