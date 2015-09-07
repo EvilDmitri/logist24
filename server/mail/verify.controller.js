@@ -31,8 +31,10 @@ exports.send = function(req, res) {
     console.log('saved!');
   });
 
-  host=req.get('host');
-  link="http://"+req.get('host')+"/mail/verify?id="+rand;
+  host='localhost:9000';
+  //host='logistik24.ee';
+
+  link="http://"+host+"/mail/verify?id="+rand;
   mailOptions={
     from: 'Logistik24 ✔ <realpyth@gmail.com>', // sender address
     to : recipient,
@@ -58,8 +60,10 @@ exports.send = function(req, res) {
 // Verify the link
 exports.verify = function(req, res) {
 
-  if((req.protocol+"://"+req.get('host'))==("http://"+host))
-  {
+  console.log(req.get('host'));
+
+  //if((req.protocol+"://"+req.get('host'))==("http://"+host))
+  //{
 
     VerifyEmail.findOne({'id': req.query.id}, function (err, email) {
       console.log(email);
@@ -82,10 +86,10 @@ exports.verify = function(req, res) {
 
     });
 
-  }
-  else
-  {
-    res.end("<h1>Request is from unknown source");
-  }
+  //}
+  //else
+  //{
+  //  res.end("<h1>Request is from unknown source");
+  //}
 
 };
