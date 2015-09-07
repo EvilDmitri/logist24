@@ -23,6 +23,7 @@ var rand,mailOptions,host,link;
 exports.send = function(req, res) {
 
   var recipient = req.body.email;
+  console.log(req.body);
 
   rand=Math.floor((Math.random() * 1000000) + 54);
   VerifyEmail.create({'user': req.body.user, 'id': rand, 'email': recipient}, function(err, rand) {
@@ -31,7 +32,7 @@ exports.send = function(req, res) {
   });
 
   host=req.get('host');
-  link="http://"+req.get('host')+"/verify?id="+rand;
+  link="http://"+req.get('host')+"/mail/verify?id="+rand;
   mailOptions={
     from: 'Logistik24 ✔ <realpyth@gmail.com>', // sender address
     to : recipient,
