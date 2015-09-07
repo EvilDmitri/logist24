@@ -5,7 +5,7 @@ var controller = require('./verify.controller');
 
 var router = express.Router();
 
-router.get('/send', controller.send);
+router.post('/send', controller.send);
 router.get('/verify', controller.verify);
 
 

@@ -22,13 +22,10 @@ var rand,mailOptions,host,link;
 // Send the email
 exports.send = function(req, res) {
 
-
-  var recipient = req.query.to;
-  //var recipient = 'dmitribrach@gmail.com';
-
+  var recipient = req.body.email;
 
   rand=Math.floor((Math.random() * 1000000) + 54);
-  VerifyEmail.create({'user': req.query.user, 'id': rand, 'email': recipient}, function(err, rand) {
+  VerifyEmail.create({'user': req.body.user, 'id': rand, 'email': recipient}, function(err, rand) {
     if (err) return handleError(err);
     console.log('saved!');
   });
@@ -39,16 +36,16 @@ exports.send = function(req, res) {
     from: 'Logistik24 ✔ <realpyth@gmail.com>', // sender address
     to : recipient,
     subject : "Please confirm your Email account",
-    html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
+    html : "Tere,<br> Palun kliki lingi, et kontrollida oma e-posti.<br><a href="+link+">Vajuta siia, et kontrollida</a>"
   };
-  console.log(mailOptions);
+  //console.log(mailOptions);
 
   transporter.sendMail(mailOptions, function(error, response){
     if(error){
-      console.log(error);
+      //console.log(error);
       res.end("error");
     }else{
-      console.log("Message sent: " + response.message);
+      //console.log("Message sent: " + response.message);
       res.end("sent");
     }
   });
