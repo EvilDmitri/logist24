@@ -20,6 +20,10 @@ module.exports = function(app) {
   app.use('/api/users', require('./api/user'));
 
 
+  app.use('/mail', require('./mail'));
+
+
+
   app.use('/static', express.static(__dirname + '/static'));
 
   app.use('/auth', require('./auth'));

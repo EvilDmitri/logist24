@@ -61,13 +61,4 @@ angular.module('logistaApp')
     };
 
 
-    $scope.search = function () {
-      $http.get('/api/search').success(function(Things) {
-        $scope.Loads = Things;
-        console.log($scope.Loads);
-        $scope.result = 1;
-      });
-
-    };
-
   });
