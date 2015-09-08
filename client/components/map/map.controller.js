@@ -60,12 +60,13 @@ angular.module('logistaApp')
     }
 
     $http.get('/api/things').success(function(Things) {
-      $scope.Things = Things;
-      //console.log(Things);
+      $scope.Things = Things.things;
+      //console.log($scope.Things);
 
-      var all_length = Things.length;
+      var all_length = Things.count;
+      if (all_length > 3) {all_length=3}
       for (var i=0; i<all_length ; i++) {
-        addMarker(Things[i], i);
+          addMarker($scope.Things[i], i);
       }
       socket.syncUpdates('thing', $scope.Things, addOne);
     });

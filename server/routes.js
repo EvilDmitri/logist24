@@ -11,6 +11,7 @@ var express = require('express');
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/statistics', require('./api/statistic'));
   app.use('/api/search', require('./api/search'));
   app.use('/api/comments', require('./api/comment'));
   app.use('/api/customers_info', require('./api/customer_info'));

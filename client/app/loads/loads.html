@@ -9,10 +9,19 @@
           <h1>Otsi oma koormus ja sõida!</h1>
         </div>
         <table class="table table-striped">
+          <thead>
+            <tr>
+              <td class="col-md-2 text-left"><h4><strong>Koormuse nimetus</strong></h4></td>
+              <td class="col-md-4 text-left"><h4><strong>Marsruut</strong></h4></td>
+              <td class="col-md-2 text-left"><h4><strong>Veo info</strong></h4></td>
+              <td class="col-md-4"></td>
+            </tr>
+          </thead>
           <tbody>
           <tr ng-repeat="load in Loads" >
             <td class="col-md-2 text-left"><strong ng-bind-html="load.name"></strong></td>
-            <td class="col-md-4 text-left" >{{load.info.desc | limitTo: 20}}{{load.info.desc.length > 20 ? '...' : ''}}</td>
+            <td class="col-md-4 text-left"><strong>{{load.route_start}} - {{load.route_end}}</strong></td>
+            <td class="col-md-2 text-left" >{{load.info.desc | limitTo: 40}}{{load.info.desc.length > 40 ? '...' : ''}}</td>
             <td class="col-md-4"><a ng-href="/thing/{{load._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
           </tr>
           </tbody>

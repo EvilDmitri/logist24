@@ -1,5 +1,5 @@
 <div class="wedo">
-  <div class="container">
+  <div class="container" ng-controller="SearchCtrl">
     <div class="wedo-main">
 
 
@@ -16,7 +16,7 @@
 
       <!-- Search form -->
 
-      <form ng-hide="result" autocomplete="off" class="form-horizontal" name="search_form" ng-controller="SearchCtrl" ng-submit="searchThing()">
+      <form ng-hide="result" autocomplete="off" class="form-horizontal" name="search_form" ng-submit="searchThing()">
 
         <!-- Veo type-->
         <div class="form-group">
@@ -32,7 +32,7 @@
         <div class="form-group">
           <label for="source_address" class="col-sm-2 control-label">Väljumine aadress</label>
           <div class="col-sm-10">
-            <input type="text" required class="form-control" id="source_address" placeholder="Väljumine aadress"
+            <input type="text"  class="form-control" id="source_address" placeholder="Väljumine aadress"
                    g-places-autocomplete options="autocompleteOptions" ng-model="search.source_address">
           </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="form-group">
           <label for="dest_address" class="col-sm-2 control-label">Tarne aadress</label>
           <div class="col-sm-10">
-            <input type="text" required class="form-control" id="dest_address" placeholder="Tarne aadress"
+            <input type="text"  class="form-control" id="dest_address" placeholder="Tarne aadress"
                    g-places-autocomplete options="autocompleteOptions" ng-model="search.dest_address">
           </div>
         </div>
@@ -55,7 +55,6 @@
       </form>
 
 
-      <button ng-click="search()">test</button>
 
       <table class="table table-striped">
         <tbody>

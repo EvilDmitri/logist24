@@ -3,7 +3,7 @@
 angular.module('logistaApp')
   .controller('SearchCtrl', function ($scope, $http) {
 
-    $scope.Loads = null;
+    $scope.Loads = [];
 
     $scope.bodies = [
       {id:1, name:'Järelkäru'},
@@ -14,6 +14,10 @@ angular.module('logistaApp')
       {id:6, name:'Sadulveok'},
       {id:7, name:'Veoauto'}
     ];
+
+    $scope.autocompleteOptions = {
+      componentRestrictions: { country: 'ee' }
+    };
 
 
     var route = {
@@ -45,18 +49,19 @@ angular.module('logistaApp')
           }
         }
 
+        $http.post('/api/search', {'search': route}).success(function(Things) {
+          $scope.Loads = Things;
+          $scope.result = 1;
+        });
+
 
       } else {
         $scope.search_form.submitted = true;
       }
 
-      //console.log(route);
+      console.log(route);
 
-      $http.get('/api/search').success(function(Things) {
-        $scope.Loads = Things;
-        console.log($scope.Loads);
-        $scope.result = 1;
-      });
+
 
     };
 

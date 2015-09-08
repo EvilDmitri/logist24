@@ -14,9 +14,11 @@ var Thing = require('./thing.model');
 
 // Get list of things
 exports.index = function(req, res) {
-  Thing.find({}, '', {limit:3, sort: '-createdOn'}, function (err, things) {
+  Thing.find({}, '', {sort: '-createdOn'}, function (err, things) {
     if(err) { return handleError(res, err); }
-    return res.status(200).json(things);
+    return res.json(200, {'things':things, 'count': things.length});
+    //return res.json(200, {'things':things.sort(), 'count': things.length});
+    //return res.status(200).json(things);
   });
 };
 

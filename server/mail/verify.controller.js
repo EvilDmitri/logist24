@@ -36,7 +36,7 @@ exports.send = function(req, res) {
 
   link="http://"+host+"/mail/verify?id="+rand;
   mailOptions={
-    from: 'Logistik24 ✔ <realpyth@gmail.com>', // sender address
+    from: 'Logistik24.ee ✔ <logistik24.ee@gmail.com>', // sender address
     to : recipient,
     subject : "Please confirm your Email account",
     html : "Tere,<br> Palun kliki lingi, et kontrollida oma e-posti.<br><a href="+link+">Vajuta siia, et kontrollida</a>"

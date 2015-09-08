@@ -11,7 +11,7 @@
         <div class="clearfix"> </div>
         <h3>Viimased koormused</h3>
         <div id="items">
-          <div class="item" ng-repeat="vedu in Veod">
+          <div class="item" ng-repeat="vedu in Veod.things">
 
             <div class="item_description">
               <!--<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />-->
@@ -26,6 +26,11 @@
 
 
         </div>
+
+        <!-- Statistics-->
+        <div ng-include="'components/statistics/statistics.html'"></div>
+
+
         <div class="clearfix"> </div>
       </div>
 

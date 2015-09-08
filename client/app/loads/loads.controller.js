@@ -5,7 +5,8 @@ angular.module('logistaApp')
 
     $scope.Loads = [];
     $http.get('/api/things').success(function(Things) {
-      $scope.Loads = Things;
+
+      $scope.Loads = Things.things;
       console.log(Things);
       socket.syncUpdates('thing', $scope.Veod);
     });
