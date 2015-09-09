@@ -4,7 +4,66 @@
 
 
             <div class="we-do-top">
-                <div ng-include="'components/thing_form/create_thing.html'"></div>
+
+              <div>
+                <div>
+                  <div>
+                    <h3>Päringu saatmine</h3>
+                    <p>Saada tasuta päring kõigile meie baasile. </p>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-md-offset-3 text-left" ng-hide="request.trasportRequest">
+
+                  <form >
+                    <div>
+                      <input checked="" type="radio" name="request_type" id="req_transport" value="transport" ng-model="request.type">
+                      <label for="req_transport">Vajan transporditeenust</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="request_type" id="req_load" value="load" ng-model="request.type">
+                      <label for="req_load">Oman vaba transport</label></div>
+
+                    <div>
+                      <button class="btn btn-info" type="button" ng-click="makeRequest()">Edasi
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                    </div>
+
+                  </form>
+
+                </div>
+
+              </div>
+
+                <div class="pull-left" ng-show="request.trasportRequest">
+                  <button class="btn btn-info" type="button" ng-click="back()">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    Tagasi</button>
+                </div>
+
+
+                <div ng-show="request.trasportRequest == 'transport'" ng-include="'components/thing_form/create_thing.html'"></div>
+                <div ng-show="request.trasportRequest == 'load'" ng-include="'components/transport_form/create_transport.html'"></div>
+
+
+
+              <div id="right_side_content_col" class="text-left">
+                <div class="right_side_content_col_article">
+
+                  <h3>Kuidas Veokorraldaja toimib?</h3>
+
+                  <ol>
+                    <li><strong>Saada tasuta päring</strong>, kasutades vormi vasakul <br>     &nbsp;</li>
+                    <li>Sinu päring <strong>saadetakse meiega liitunud firmadele </strong><br>     &nbsp;</li>
+                    <li>Vastuseid päringule hakkad saama <strong>loetud minutite pärast </strong></li> </ol>
+                  <div id="sidebanner_content" class="banner_container">
+                    <div class="one_banner">
+                      <p>&nbsp;</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
                 <div class="clearfix"> </div>
             </div>
 

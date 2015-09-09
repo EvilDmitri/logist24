@@ -1,0 +1,79 @@
+option.optgroup-label {
+    font-weight: bold !important;
+}
+
+form.request_form {
+  /*float: left;*/
+  width: 450px;
+}
+
+
+table.enquiry td {
+  padding: 4px;
+  vertical-align: top;
+}
+
+td {
+  empty-cells: show;
+}
+
+td.subheadline {
+  padding: 7px;
+  background: lightcyan;
+  border: 1px solid #b4cda9;
+  color: #0a3113;
+  font-size: 13px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.query_area, .query_input {
+  background: lightyellow;
+  font-size: 15px;
+  width: 280px;
+  border: 1px solid #b2cba8;
+}
+
+.query_active_area {
+  background: #F1FFD2;
+}
+
+.query_key {
+  padding-top: 9px;
+  text-align: right;
+  padding-left: 7px;
+  white-space: nowrap;
+}
+
+
+.shortinput {
+  width: 70px !important;
+}
+
+
+#right_side_content_col {
+  float: right;
+  font-size: 14px;
+  width: 170px;
+  color: #636363;
+}
+div.right_side_content_col_article {
+  padding-left: 10px;
+  line-height: 16px;
+}
+div.right_side_content_col_article h3 {
+    font-size: 18px;
+    color: #ed1c24;
+    font-weight: normal;
+    line-height: 29px;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}

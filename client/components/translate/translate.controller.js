@@ -17,9 +17,9 @@ app.config(function ($translateProvider) {
     'MY_TRUCKS': 'Here are Your trucks'
   })
     .translations('ee', {
-      ALL: 'Kõik',
+      ALL: 'Kõik päringud',
       TRUCKS: 'Veod',
-      NEW: 'Uus',
+      NEW: 'Saada päring',
       LOAD: 'Koormus',
       NEW_TRUCK: 'Alusta oma veo',
       NEW_TRUCK_TEXT: 'Alusta oma uue veo ja sai nähtav kaardil.',
@@ -32,7 +32,7 @@ app.config(function ($translateProvider) {
   .translations('ru', {
       ALL: 'Все',
       TRUCKS: 'Перевозчики',
-      NEW: 'Новый',
+      NEW: 'Послать запрос',
       LOAD: 'Груз',
       NEW_TRUCK: 'Начни новый маршрут',
       NEW_TRUCK_TEXT: 'Начни новый маршрут и стань видимым на карте',

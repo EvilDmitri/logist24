@@ -1,0 +1,244 @@
+<div class="col-md-3 col-md-offset-3">
+
+  <!--<div>-->
+    <!--<h1>Sisesta veo üldinfo</h1>-->
+  <!--</div>-->
+
+  <!-- Info input form -->
+
+  <form  autocomplete="off" class="form-horizontal request_form" name="purchase_form" ng-controller="CreateTransportCtrl" ng-submit="createTransport()">
+
+    <table cellpadding="0" cellspacing="0" class="enquiry text-left">
+      <tbody><tr>
+        <td colspan="2" class="subheadline">Saatja andmed</td>
+      </tr>
+      <tr>
+        <td class="query_key">* Firma</td>
+        <td class="query_val">
+          <input type="text" name="sender_firm" class="query_input" ng-model="transport.firma"></td>
+      </tr>
+      <tr>
+        <td class="query_key">Kontaktisik</td>
+        <td class="query_val"><input type="text" name="sender_contact_person" class="query_input"  ng-model="transport.contact"></td>
+      </tr>
+      <tr>
+        <td class="query_key">Telefon</td>
+        <td class="query_val"><input type="text" name="sender_phone" class="query_input"  ng-model="transport.phone"></td>
+      </tr>
+      <tr>
+        <td class="query_key">* E-post</td>
+        <td class="query_val"><input type="text" name="sender_email" class="query_input"  ng-model="transport.email"></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="subheadline">Pealelaadimise koht</td>
+      </tr>
+      <tr>
+        <td class="query_key">* Aadress</td>
+        <td class="query_val">
+          <input type="text" required class="query_input" id="source_address"
+                 g-places-autocomplete options="autocompleteOptions" ng-model="thing.source_address">
+
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="subheadline">Mahalaadimise koht</td>
+      </tr>
+
+      <tr>
+        <td class="query_key">* Aadress</td>
+        <td class="query_val"><input type="text" class="query_input" id="dest_address"
+                                  g-places-autocomplete options="autocompleteOptions" ng-model="thing.dest_address">
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="subheadline">Info kauba kohta</td>
+      </tr>
+      <tr>
+        <td class="query_key">Kauba nimetus</td>
+        <td class="query_val"><input type="text" name="cargo_name" class="query_input" ng-model="transport.load"></td>
+      </tr>
+      <tr>
+        <td class="query_key">* Veo kuupäev</td>
+        <td class="query_val"><input type="text" name="cargo_date" class="query_input" ng-model="transport.date"></td>
+      </tr>
+      <tr>
+        <td class="query_key">Aluste arv</td>
+        <td class="query_val"><input type="text" name="plates_count" class="query_input shortinput" ng-model="transport.plates_count"></td>
+      </tr>
+      <tr>
+        <td class="query_key">CBM arv</td>
+        <td class="query_val"><input type="text" name="cmb" class="query_input shortinput" ng-model="transport.cmb"> M<sup>3</sup></td>
+      </tr>
+      <tr>
+        <td class="query_key">Kauba kogukaal</td>
+        <td class="query_val"><input type="text" name="weight" class="query_input shortinput" ng-model="transport.weight"> kg</td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="subheadline">Lisainfo</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <textarea name="additional_info" class="query_area"></textarea>	</td>
+      </tr>
+      </tbody></table>
+
+
+    <!--<div>Saatja andmed</div>-->
+    <!--<div class="form-group">-->
+      <!--<label for="name" class="col-sm-2 control-label">Veo nimetus</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<input type="text" required class="form-control" id="name" placeholder="Pealkiri" ng-model="thing.name">-->
+
+        <!--<div class="error"-->
+             <!--ng-show="purchase_form.name.$dirty && signup_form.name.$invalid">-->
+          <!--<small class="error"-->
+                 <!--ng-show="signup_form.name.$error.required">-->
+            <!--Veo nimetus on vaja-->
+          <!--</small>-->
+        <!--</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+    <!--<label for="category" class="col-sm-2 control-label">Kategooria</label>-->
+    <!--<div class="col-sm-10">-->
+    <!--<input type="text" class="form-control" id="category" placeholder="Kategooria" ng-model="thing.info.category">-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+      <!--<label for="desc" class="col-sm-2 control-label">Veo kirjeldus</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<textarea required rows="10" cols="45" class="form-control" id="desc" placeholder="Veo" ng-model="thing.info.desc"></textarea>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash; Veo type&ndash;&gt;-->
+    <!--<div class="form-group">-->
+      <!--<label for="veo_type" class="col-sm-2 control-label">Veo tüüp</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<select id="veo_type" ng-model="body_type" ng-options="b.name for b in bodies">-->
+          <!--<option value="" selected disabled>&#45;&#45; Vali keretüüp &#45;&#45;</option>-->
+        <!--</select>-->
+      <!--</div>-->
+    <!--</div>-->
+
+     <!--&lt;!&ndash; Veo kestvus (endurance) &ndash;&gt;-->
+    <!--<div class="form-group">-->
+      <!--<label for="veo_kestvus" class="col-sm-2 control-label">Veo kestvus</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<select class="medium pull-left error" id="veo_kestvus" name="hanke_kestvus" ng-model="model.endurance" convert-to-number>-->
+          <!--<option selected="selected" value="0" label="Vali kestvus">Vali kestvus</option>-->
+          <!--<option value="3" label="3 päeva">3 päeva</option>-->
+          <!--<option value="7" label="1 nädal">1 nädal</option>-->
+          <!--<option value="14" label="2 nädalat">2 nädalat</option>-->
+          <!--<option value="30" label="1 kuu">1 kuu</option>-->
+
+        <!--</select>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+      <!--<label for="hind" class="col-sm-2 control-label">Kohaletoimetus hind</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<input type="text" required class="form-control" id="hind" placeholder="Hind" ng-model="thing.price">-->
+      <!--</div>-->
+    <!--</div>-->
+
+
+    <!--<div class="form-group">-->
+      <!--<label for="source_address" class="col-sm-2 control-label">Väljumine aadress</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<input type="text" required class="form-control" id="source_address" placeholder="Väljumine aadress"-->
+               <!--g-places-autocomplete options="autocompleteOptions" ng-model="thing.source_address">-->
+      <!--</div>-->
+    <!--</div>-->
+
+
+    <!--<div class="form-group">-->
+      <!--<label for="dest_address" class="col-sm-2 control-label">Tarne aadress</label>-->
+      <!--<div class="col-sm-10">-->
+        <!--<input type="text" class="form-control" id="dest_address" placeholder="Tarne aadress"-->
+               <!--g-places-autocomplete options="autocompleteOptions" ng-model="thing.dest_address">-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--Images-->
+    <!--<div flow-init flow-files-submitted="$flow.upload()">-->
+    <!--<div class="drop" flow-drop ng-class="dropClass">-->
+    <!--<span class="btn btn-default" flow-btn>Upload File</span>-->
+    <!--<span class="btn btn-default" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folder</span>-->
+    <!--<b>OR</b>-->
+    <!--Drag And Drop your file here-->
+    <!--</div>-->
+
+
+    <!--<div flow-init-->
+         <!--flow-files-submitted="$flow.upload()"-->
+         <!--flow-file-success="$file.msg = $message">-->
+
+      <!--<input type="file" flow-btn/>-->
+      <!--Input OR Other element as upload button-->
+      <!--<span class="btn" flow-btn>Upload File</span>-->
+
+      <!--<table>-->
+        <!--<tr ng-repeat="file in $flow.files">-->
+          <!--<td>{{$index+1}}</td>-->
+          <!--<td>{{file.name}}</td>-->
+          <!--<td>{{file.msg}}</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    <!--</div>-->
+
+
+    <!--<div class="container" flow-init-->
+    <!--flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"-->
+    <!--flow-files-submitted="$flow.upload()">-->
+    <!--<h1>flow image example</h1>-->
+    <!--<hr class="soften"/>-->
+
+    <!--<div>-->
+    <!--<div class="thumbnail" ng-hide="$flow.files.length">-->
+    <!--<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" />-->
+    <!--</div>-->
+    <!--<div class="thumbnail" ng-show="$flow.files.length">-->
+    <!--<img flow-img="$flow.files[0]" />-->
+    <!--</div>-->
+    <!--<div>-->
+    <!--<a href="#" class="btn" ng-hide="$flow.files.length" flow-btn flow-attrs="{accept:'image/*'}">Select image</a>-->
+    <!--<a href="#" class="btn" ng-show="$flow.files.length" flow-btn flow-attrs="{accept:'image/*'}">Change</a>-->
+    <!--<a href="#" class="btn btn-danger" ng-show="$flow.files.length"-->
+    <!--ng-click="$flow.cancel()">-->
+    <!--Remove-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<p>-->
+    <!--Only PNG,GIF,JPG files allowed.-->
+    <!--</p>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success" >Valmis</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+

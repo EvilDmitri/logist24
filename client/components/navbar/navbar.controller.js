@@ -8,32 +8,31 @@ angular.module('logistaApp')
       //  'description': ['Main page'],
       //  'link': '/'
       //},
-      {
-        'title': 'TRUCKS',
-        'description': ['Veod'],
-        'link': '/veod'
-      },
+      //{
+      //  'title': 'TRUCKS',
+      //  'description': ['Veod'],
+      //  'link': '/veod'
+      //},
       {
         'title': 'NEW',
         'description': ['New route'],
         'link': '/new_route'
       },
       {
-        'title': 'Kõik',
+        'title': 'Kõik päringud',
         'description': ['Kõik koormad'],
         'link': '/loads'
       },
       {
-        'title': 'Otsi',
+        'title': 'Otsi päring',
         'description': ['Otsing'],
         'link': '/search'
+      },
+      {
+        'title': 'Meist',
+        'description': ['Koormus'],
+        'link': '/about'
       }
-      //,
-      //{
-      //  'title': 'NEW_TRUCK',
-      //  'description': ['Koormus'],
-      //  'link': '/koormus'
-      //}
     ];
 
     $scope.isCollapsed = true;
