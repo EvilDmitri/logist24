@@ -5,7 +5,7 @@ angular.module('logistaApp')
     $stateProvider
       .state('thing', {
         url: '/thing/:id',
-        data: {pageTitle: 'Main'},
+        data: {pageTitle: 'Vajan transport'},
         templateUrl: 'app/thing/thing.html',
         controller: 'ThingCtrl'
 

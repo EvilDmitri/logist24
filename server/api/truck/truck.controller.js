@@ -1,11 +1,11 @@
 'use strict';
 
 var _ = require('lodash');
-var Truck = require('../thing/thing.model');
+var Truck = require('./truck.model');
 
 // Get list of trucks
 exports.index = function(req, res) {
-  Truck.find(function (err, trucks) {
+  Truck.find({}, '', {sort: '-created_at'}, function (err, trucks) {
     if(err) { return handleError(res, err); }
     return res.status(200).json(trucks);
   });

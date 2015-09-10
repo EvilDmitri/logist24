@@ -13,10 +13,10 @@ angular.module('logistaApp')
     console.log(user);
 
 
-
-    $scope.createTransport = function () {
-      console.log()
-    };
+    $scope.transport = {};
+    //$scope.createTransport = function () {
+    //  console.log($scope.transport);
+    //};
 
 
     $scope.bodies = [
@@ -26,7 +26,8 @@ angular.module('logistaApp')
       {id:4, name:'Furgoon'},
       {id:5, name:'Kallur'},
       {id:6, name:'Sadulveok'},
-      {id:7, name:'Veoauto'}
+      {id:7, name:'Veoauto'},
+      {id:8, name:'Rekka'}
 
     ];
 
@@ -36,18 +37,18 @@ angular.module('logistaApp')
       }
       $http.post('/api/things', {
         owner: user._id,
-        name: $scope.thing.name,
-        type: $scope.thing.price,
-        endurance: $scope.thing.endurance,
-        price: $scope.thing.price,
-        info: $scope.thing.info,
-        source_address: $scope.thing.source_address,
-        dest_address: $scope.thing.dest_address,
+
+        company: $scope.transport.company,
+        contact: $scope.transport.contact,
+        phone: $scope.transport.phone,
+        email: $scope.transport.email,
+        source_address: $scope.transport.source_address,
+        dest_address: $scope.transport.dest_address,
         route_start: route.route_start,
         route_end: route.route_end,
-        position: route.position,
-        viewed: 0,
-        createdOn: Date.now()
+        date: $scope.transport.date,
+        body_type: $scope.transport.body_type,
+        info: $scope.transport.info
       });
       $scope.thing = '';
     }
@@ -57,12 +58,9 @@ angular.module('logistaApp')
       componentRestrictions: { country: 'ee' }
     };
 
-    var route = {
-     source_address:null,
-     dest_address:null
-    };
+    var route = {};
 
-    $scope.createThing = function() {
+    $scope.createTransport = function() {
       //console.log($scope.thing.address.geometry.location.lat(), $scope.thing.address.geometry.location.lng());
       //console.log($scope.thing.address.address_components);
       console.log($scope.thing);
@@ -70,7 +68,7 @@ angular.module('logistaApp')
       if ($scope.purchase_form.$valid) {
 
         // Get start city name
-        var comp = $scope.thing.source_address.address_components;
+        var comp = $scope.transport.source_address.address_components;
         var length = comp.length;
         for (var i=0; i<length; i++){
           if (comp[i].types[0] == 'administrative_area_level_2') {
@@ -80,7 +78,7 @@ angular.module('logistaApp')
         }
 
         // Get end city name
-        comp = $scope.thing.dest_address.address_components;
+        comp = $scope.transport.dest_address.address_components;
         length = comp.length;
         for (i=0; i<length; i++){
           if (comp[i].types[0] == 'administrative_area_level_2') {
@@ -90,9 +88,9 @@ angular.module('logistaApp')
         }
 
         route.position = {
-          lat:$scope.thing.source_address.geometry.location.lat(),
-          lng:$scope.thing.source_address.geometry.location.lng(),
-          formatted_address: $scope.thing.source_address.formatted_address
+          lat:$scope.transport.source_address.geometry.location.lat(),
+          lng:$scope.transport.source_address.geometry.location.lng(),
+          formatted_address: $scope.transport.source_address.formatted_address
         };
 
         console.log(route.position);

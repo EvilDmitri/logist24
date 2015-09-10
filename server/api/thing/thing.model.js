@@ -17,9 +17,19 @@ var ThingSchema = new Schema({
   position: Object,
   viewed: Number,
   active: Boolean,
-  createdOn: {
-    type: Date
-  }
+  createdOn: { type: Date },
+  updated_at    : { type: Date }
 });
+
+
+ThingSchema.pre('save', function (next) {
+  var now = new Date();
+  this.updated_at = now;
+  if(!this.created_at) {
+    this.created_at = now;
+  }
+  next();
+});
+
 
 module.exports = mongoose.model('Thing', ThingSchema);

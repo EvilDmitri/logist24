@@ -1,8 +1,9 @@
 <div class="col-md-3 col-md-offset-3">
 
-  <!--<div>-->
-    <!--<h1>Sisesta veo üldinfo</h1>-->
-  <!--</div>-->
+  <hr>
+  <div class="-align-center">
+    <h4>Sisesta oma transpordi info</h4>
+  </div>
 
   <!-- Info input form -->
 
@@ -15,7 +16,7 @@
       <tr>
         <td class="query_key">* Firma</td>
         <td class="query_val">
-          <input type="text" name="sender_firm" class="query_input" ng-model="transport.firma"></td>
+          <input type="text" name="sender_firm" class="query_input" ng-model="transport.company"></td>
       </tr>
       <tr>
         <td class="query_key">Kontaktisik</td>
@@ -23,11 +24,11 @@
       </tr>
       <tr>
         <td class="query_key">Telefon</td>
-        <td class="query_val"><input type="text" name="sender_phone" class="query_input"  ng-model="transport.phone"></td>
+        <td class="query_val"><input type="text" name="sender_phone" class="query_input" ng-model="transport.phone"></td>
       </tr>
       <tr>
         <td class="query_key">* E-post</td>
-        <td class="query_val"><input type="text" name="sender_email" class="query_input"  ng-model="transport.email"></td>
+        <td class="query_val"><input type="email" name="sender_email" class="query_input" ng-model="transport.email"></td>
       </tr>
       <tr>
         <td colspan="2">&nbsp;</td>
@@ -39,7 +40,7 @@
         <td class="query_key">* Aadress</td>
         <td class="query_val">
           <input type="text" required class="query_input" id="source_address"
-                 g-places-autocomplete options="autocompleteOptions" ng-model="thing.source_address">
+                 g-places-autocomplete options="autocompleteOptions" ng-model="transport.source_address">
 
       </tr>
       <tr>
@@ -52,7 +53,7 @@
       <tr>
         <td class="query_key">* Aadress</td>
         <td class="query_val"><input type="text" class="query_input" id="dest_address"
-                                  g-places-autocomplete options="autocompleteOptions" ng-model="thing.dest_address">
+                                  g-places-autocomplete options="autocompleteOptions" ng-model="transport.dest_address">
       </tr>
       <tr>
         <td colspan="2">&nbsp;</td>
@@ -60,26 +61,20 @@
       <tr>
         <td colspan="2" class="subheadline">Info kauba kohta</td>
       </tr>
-      <tr>
-        <td class="query_key">Kauba nimetus</td>
-        <td class="query_val"><input type="text" name="cargo_name" class="query_input" ng-model="transport.load"></td>
-      </tr>
+
       <tr>
         <td class="query_key">* Veo kuupäev</td>
         <td class="query_val"><input type="text" name="cargo_date" class="query_input" ng-model="transport.date"></td>
       </tr>
       <tr>
-        <td class="query_key">Aluste arv</td>
-        <td class="query_val"><input type="text" name="plates_count" class="query_input shortinput" ng-model="transport.plates_count"></td>
+        <td class="query_key">Veomasina tüüp</td>
+        <td class="query_val">
+          <select id="veo_type" ng-model="transport.body_type" ng-options="b.name for b in bodies">
+            <option value="" selected disabled>-- Vali keretüüp --</option>
+          </select>
+        </td>
       </tr>
-      <tr>
-        <td class="query_key">CBM arv</td>
-        <td class="query_val"><input type="text" name="cmb" class="query_input shortinput" ng-model="transport.cmb"> M<sup>3</sup></td>
-      </tr>
-      <tr>
-        <td class="query_key">Kauba kogukaal</td>
-        <td class="query_val"><input type="text" name="weight" class="query_input shortinput" ng-model="transport.weight"> kg</td>
-      </tr>
+
       <tr>
         <td colspan="2">&nbsp;</td>
       </tr>
@@ -88,7 +83,7 @@
       </tr>
       <tr>
         <td colspan="2">
-          <textarea name="additional_info" class="query_area"></textarea>	</td>
+          <textarea name="additional_info" class="query_area"  ng-model="transport.info"></textarea>	</td>
       </tr>
       </tbody></table>
 
@@ -124,7 +119,7 @@
       <!--</div>-->
     <!--</div>-->
 
-    <!--&lt;!&ndash; Veo type&ndash;&gt;-->
+    <!-- Veo type-->
     <!--<div class="form-group">-->
       <!--<label for="veo_type" class="col-sm-2 control-label">Veo tüüp</label>-->
       <!--<div class="col-sm-10">-->
