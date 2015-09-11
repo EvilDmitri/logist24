@@ -12,9 +12,16 @@ angular.module('logistaApp')
 
     var user = Auth.getCurrentUser();
 
-    $http.get('/api/trucks/'+user._id).success(function(Things) {
-      $scope.my_trucks = Things;
-      console.log($scope.my_trucks);
+    $scope.Trucks = {};
+    $http.get('/api/trucks/user/'+user._id).success(function(Things) {
+      $scope.Trucks = Things;
+
     });
+
+    $scope.Loads = {};
+    $http.get('/api/things/user/'+user._id).success(function(Things) {
+      $scope.Loads = Things;
+    });
+
 
   });

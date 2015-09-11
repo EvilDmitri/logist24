@@ -31,6 +31,15 @@ exports.show = function(req, res) {
   });
 };
 
+
+// Get user things
+exports.show_user_things = function(req, res) {
+  Thing.find({'owner': req.params.id}, '', {sort: '-created_at'}, function (err, things) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, {'things':things, 'count': things.length});
+  });
+};
+
 // Creates a new thing in the DB.
 exports.create = function(req, res) {
   Thing.create(req.body, function(err, thing) {

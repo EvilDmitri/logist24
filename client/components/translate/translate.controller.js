@@ -27,7 +27,7 @@ app.config(function ($translateProvider) {
       BUTTON_TEXT_EN: 'eng',
       BUTTON_TEXT_RU: 'rus',
       BUTTON_TEXT_EE: 'est',
-      'MY_TRUCKS': 'See on Teie veod'
+      MY_TRUCKS: 'See on Teie päringud'
     })
   .translations('ru', {
       ALL: 'Все',

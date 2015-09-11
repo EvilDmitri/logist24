@@ -7,21 +7,68 @@
       </div>
 
       <div class="we-do-top">
-        <div id="items">
-          <div class="item" ng-repeat="truck in my_trucks">
 
-            <div class="item_description">
-              <!--<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />-->
-              <p><strong>{{truck.name}}</strong></p>
-              <p>{{truck.info.desc | limitTo: 20}}{{truck.info.desc.length > 20 ? '...' : ''}}</p>
-            </div>
-
-            <!--<a href="#" class="buy">Buy this Product</a>-->
-          </div>
-
-
-
+        <div class="col-md-6">
+          <p><h4>Vaba transport</h4></p>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <td class="col-md-2 text-left"><h4><strong>Nimetus</strong></h4></td>
+              <td class="col-md-4 text-left"><h4><strong>Marsruut</strong></h4></td>
+              <td class="col-md-2 text-left"><h4><strong>Lisainfo</strong></h4></td>
+              <td class="col-md-4"></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="truck in Trucks.things" >
+              <td class="col-md-2 text-left"><strong ng-bind-html="load.name"></strong></td>
+              <td class="col-md-4 text-left"><strong>{{truck.route_start}} - {{truck.route_end}}</strong></td>
+              <td class="col-md-2 text-left" >{{truck.info | limitTo: 40}}{{truck.info.length > 40 ? '...' : ''}}</td>
+              <td class="col-md-4"><a ng-href="/truck/{{truck._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
+            </tr>
+            </tbody>
+          </table>
         </div>
+
+
+        <div class="col-md-6">
+          <p><h4>Kaubaruumid</h4></p>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <td class="col-md-2 text-left"><h4><strong>Nimetus</strong></h4></td>
+              <td class="col-md-4 text-left"><h4><strong>Marsruut</strong></h4></td>
+              <td class="col-md-2 text-left"><h4><strong>Lisainfo</strong></h4></td>
+              <td class="col-md-4"></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="load in Loads.things" >
+              <td class="col-md-2 text-left"><strong ng-bind-html="load.name"></strong></td>
+              <td class="col-md-4 text-left"><strong>{{load.route_start}} - {{load.route_end}}</strong></td>
+              <td class="col-md-2 text-left" >{{load.info | limitTo: 40}}{{load.info.length > 40 ? '...' : ''}}</td>
+              <td class="col-md-4"><a ng-href="/thing/{{load._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+
+        <!--<div id="items">-->
+          <!--<div class="item" ng-repeat="truck in my_trucks">-->
+
+            <!--<div class="item_description">-->
+              <!--&lt;!&ndash;<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />&ndash;&gt;-->
+              <!--<p><strong>{{truck.name}}</strong></p>-->
+              <!--<p>{{truck.info.desc | limitTo: 20}}{{truck.info.desc.length > 20 ? '...' : ''}}</p>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<a href="#" class="buy">Buy this Product</a>&ndash;&gt;-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+
         <div class="clearfix"> </div>
       </div>
 

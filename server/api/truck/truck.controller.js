@@ -20,6 +20,14 @@ exports.show = function(req, res) {
   });
 };
 
+// Get user trucks
+exports.show_user_trucks = function(req, res) {
+  Truck.find({'owner': req.params.id}, '', {sort: '-created_at'}, function (err, things) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, {'trucks':things, 'count': things.length});
+  });
+};
+
 // Creates a new truck in the DB.
 exports.create = function(req, res) {
   Truck.create(req.body, function(err, truck) {
