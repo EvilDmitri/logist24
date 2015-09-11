@@ -9,11 +9,16 @@ angular.module('logistaApp')
       //map.setScale(7);
     });
 
-    var image = {
-      //url: '/static/images/map/arrow_up_blue.png'
-      url: '/static/images/map/yellow_pin.png'
+    var green_image = {
+      url: '/static/images/map/green_pin.png'
       ,
-      //size: new google.maps.Size(parseFloat(20), parseFloat(32)),
+      origin: new google.maps.Point(0, 0)
+      //,
+      //anchor: new google.maps.Point(parseFloat(0), parseFloat(32))
+    };
+    var red_image = {
+      url: '/static/images/map/orange_pin.png'
+      ,
       origin: new google.maps.Point(0, 0)
       //,
       //anchor: new google.maps.Point(parseFloat(0), parseFloat(32))
@@ -23,17 +28,23 @@ angular.module('logistaApp')
 
     var markers = [];
     var info = [];
-    function addMarker(thing, i){
-      var lat = thing.position.lat;
-      var lng = thing.position.lng;
+    function addMarker(thing, i, color){
+      var image = {};
+      if (color === 'red') {image = red_image};
+      if (color === 'green') {image = green_image};
+
+      console.log(image);
+
+      var lat = thing.position.position.lat;
+      var lng = thing.position.position.lng;
       var latlng = new google.maps.LatLng(lat, lng);
 
-      var infoText = $filter('limitTo')(thing.info.desc, 20);
-      infoText += thing.info.desc.length > 20 ? '...' : '';
+      var infoText = $filter('limitTo')(thing.info, 20);
+      infoText += thing.info.length > 20 ? '...' : '';
 
       info[i] = new google.maps.InfoWindow({
-        content: '<h2>'+ thing.name +'</h2>' + infoText + '<br><strong>Väljumine: </strong>' + thing.source_address.formatted_address +
-        '<br><strong>Tarne: </strong>' + thing.dest_address.formatted_address +
+        content: '<h2>'+ thing.company +'</h2>' + infoText + '<br><strong>Pealelaadimise koht: </strong>' + thing.source_address.formatted_address +
+        '<br><strong>Mahalaadimise koht: </strong>' + thing.dest_address.formatted_address +
         '<br><a href="/thing/' + thing._id + '">Vaata</a>'
       });
       //info[i].setOptions(options:{visible:false});
@@ -64,12 +75,23 @@ angular.module('logistaApp')
       //console.log($scope.Things);
 
       var all_length = Things.count;
-      if (all_length > 3) {all_length=3}
       for (var i=0; i<all_length ; i++) {
-          addMarker($scope.Things[i], i);
+          addMarker($scope.Things[i], i, 'red');
       }
       socket.syncUpdates('thing', $scope.Things, addOne);
     });
+
+    $http.get('/api/trucks').success(function(Trucks) {
+      $scope.Trucks = Trucks.things;
+      //console.log($scope.Things);
+
+      var all_length = Trucks.count;
+      for (var i=0; i<all_length ; i++) {
+          addMarker($scope.Trucks[i], i, 'green');
+      }
+      socket.syncUpdates('thing', $scope.Trucks, addOne);
+    });
+
 
 
 

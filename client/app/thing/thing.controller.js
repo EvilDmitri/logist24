@@ -12,12 +12,10 @@ angular.module('logistaApp')
     $http.get('/api/things/'+$scope.id).success(function(awesomeThing) {
       $scope.thing = awesomeThing;
       //console.log(awesomeThing);
-      getCarrier(awesomeThing.owner);
+      //getCarrier(awesomeThing.owner);
       addMarker(awesomeThing);
 
     });
-
-
 
     function getCarrier(id){
       $http.get('/api/users/'+id).success(function(User) {
@@ -26,11 +24,11 @@ angular.module('logistaApp')
       });
     }
 
-    // Just a sample
-    $scope.deleteThing = function(id) {
-      $http.delete('/api/things/' + id);
-      $location.url('/');
-    };
+    //// Just a sample
+    //$scope.deleteThing = function(id) {
+    //  $http.delete('/api/things/' + id);
+    //  $location.url('/');
+    //};
 
      // Update viewed field
     $scope.updateThing = function(id) {
@@ -50,17 +48,19 @@ angular.module('logistaApp')
 
 
     function addMarker(thing){
+      console.log(thing);
       var lat = $scope.thing.source_address.geometry.location.G;
       var lng = $scope.thing.source_address.geometry.location.K;
       var latlng = new google.maps.LatLng(lat, lng);
 
       var source_info = new google.maps.InfoWindow({
-        content: '<h2>'+ thing.name +'</h2>' + thing.info.desc + '<br><strong>Väljumine: </strong>' + thing.source_address.formatted_address
+        content: '<h2>'+ thing.info +'</h2>'
+        //content: '<h2>'+ thing.name +'</h2>' + thing.info + '<br><strong>Väljumine: </strong>' + thing.source_address.formatted_address
       });
       //info[i].setOptions(options:{visible:false});
 
       var source_marker = new google.maps.Marker({
-        title: thing.name,
+        title: thing.route_start,
         icon: source_image
       });
 
@@ -80,7 +80,7 @@ angular.module('logistaApp')
         latlng = new google.maps.LatLng(lat, lng);
 
         var dest_info = new google.maps.InfoWindow({
-          content: '<h2>'+ thing.name +'</h2>' + thing.info.desc + '<br><strong>Tarne: </strong>' + thing.dest_address.formatted_address
+          content: '<h2>'+ thing.name +'</h2>' + thing.info + '<br><strong>Tarne: </strong>' + thing.dest_address.formatted_address
         });
         //info[i].setOptions(options:{visible:false});
 

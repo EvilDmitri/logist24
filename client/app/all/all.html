@@ -2,33 +2,59 @@
 <div class="wedo">
   <div class="container">
 
-    <div ng-include="'components/map/map.html'"></div>
+
 
 
     <div class="wedo-main">
 
       <div class="we-do-top">
-        <div class="clearfix"> </div>
-        <h3>Viimased koormused</h3>
-        <div id="items">
-          <div class="item" ng-repeat="vedu in Veod.things">
 
-            <div class="item_description">
-              <!--<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />-->
-              <p><strong>{{vedu.name}}</strong></p>
-              <p style="word-wrap: break-word;">{{vedu.info.desc | limitTo: 100}}{{vedu.info.desc.length > 100 ? '...' : ''}}</p>
-            </div>
+        <div class="col-md-9">
+          <div ng-include="'components/map/map.html'" class="all_map"></div>
+        </div>
 
-            <span>{{vedu.price}} &#8364;</span><a ng-href="/thing/{{vedu._id}}" class="buy">{{ 'LOOK' | translate }}</a>
-            <!--<a href="#" class="buy">Buy this Product</a>-->
+
+        <!-- Statistics-->
+        <div  class="col-md-3">
+
+
+          <h4>Viimased kaubaruumi päringud</h4>
+          <div ng-repeat="vedu in Veod.things">
+            <span>{{vedu.updated_at | limitTo: 10}}</span>&nbsp;
+            <a class="" ng-bind="vedu.route_start +' - ' + vedu.route_end" ng-href="/thing/{{vedu._id}}"></a>
           </div>
 
 
+          <hr>
+          <h4>Viimased transpordi päringud</h4>
+          <div ng-repeat="truck in Trucks.things">
+            <span>{{truck.updated_at | limitTo: 10}}</span>&nbsp;
+            <a class="" ng-bind="truck.route_start +' - ' + truck.route_end" ng-href="/truck/{{truck._id}}"></a>
+          </div>
 
+          <!--<div id="items">-->
+            <!--<div class="item" ng-repeat="vedu in Veod.things">-->
+              <!--<div class="item_description">-->
+                <!--&lt;!&ndash;<img src="/static/images/items/item1.jpg" alt="" width="202" height="173" /><br />&ndash;&gt;-->
+                <!--<p><strong>{{vedu.name}}</strong></p>-->
+                <!--<p style="word-wrap: break-word;">{{vedu.info.desc | limitTo: 100}}{{vedu.info.desc.length > 100 ? '...' : ''}}</p>-->
+              <!--</div>-->
+              <!--<span>{{vedu.price}} &#8364;</span><a ng-href="/thing/{{vedu._id}}" class="buy">{{ 'LOOK' | translate }}</a>-->
+              <!--&lt;!&ndash;<a href="#" class="buy">Buy this Product</a>&ndash;&gt;-->
+            <!--</div>-->
+          <!--</div>-->
+
+
+          <hr>
+          <div ng-include="'components/statistics/statistics.html'"></div>
         </div>
 
-        <!-- Statistics-->
-        <div ng-include="'components/statistics/statistics.html'"></div>
+
+
+
+
+
+
 
 
         <div class="clearfix"> </div>

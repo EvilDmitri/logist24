@@ -6,17 +6,52 @@
     <table class="table table-striped">
       <tbody>
       <tr>
-        <td class="col-md-2">Kandja andmed:</td>
+        <td class="col-md-2">Firma nimi:</td>
         <td class="col-md-8"><img class="pull-right" width="60" height="60" src="static/images/face.png" fallback-src /><br><br><br>
-          <span class="pull-right">{{user.name}}</span></td>
+          <span class="pull-right">{{thing.company}}</span></td>
 
       </tr>
 
       <tr>
-        <td class="col-md-2">Reisi lõpp:</td>
-        <td class="col-md-8"></td>
-
+        <td class="col-md-2">Kontaktisik:</td>
+        <td class="col-md-8">{{thing.contact}}</td>
       </tr>
+
+      <tr>
+        <td class="col-md-2">Telefon:</td>
+        <td class="col-md-8">{{thing.phone}}</td>
+      </tr>
+
+      <tr>
+        <td class="col-md-2">E-post:</td>
+        <td class="col-md-8">{{thing.email}}</td>
+      </tr>
+
+      <tr>
+        <td class="col-md-2">Veo kuupäev:</td>
+        <td class="col-md-8">{{thing.date}}</td>
+      </tr>
+
+      <tr>
+        <td class="col-md-2">Kauba nimetus:</td>
+        <td class="col-md-8">{{thing.name}}</td>
+      </tr>
+
+      <tr>
+        <td class="col-md-2">Aluste arv:</td>
+        <td class="col-md-8">{{thing.pallets}}</td>
+      </tr>
+
+      <tr>
+        <td class="col-md-2">CBM arv:</td>
+        <td class="col-md-8">{{thing.volume}}</td>
+      </tr>
+
+      <tr>
+        <td class="col-md-2">Kauba kogukaal:</td>
+        <td class="col-md-8">{{thing.weight}}</td>
+      </tr>
+
       <tr>
         <td class="col-md-2">Start:</td>
         <td class="col-md-8"><h4><strong>{{thing.route_start}}</strong></h4></td>
@@ -55,8 +90,8 @@
 
 
     <div class="col-sm-6" >
-      <h3>Veo kirjeldus:</h3>
-      <div style="white-space:pre-wrap; word-wrap: break-word;"> {{thing.info.desc}}</div>
+      <h3>Lisainfo:</h3>
+      <div style="white-space:pre-wrap; word-wrap: break-word;"> {{thing.info}}</div>
     </div>
 
 

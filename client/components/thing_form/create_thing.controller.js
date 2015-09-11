@@ -29,10 +29,17 @@ angular.module('logistaApp')
       }
       $http.post('/api/things', {
         owner: user._id,
-        name: $scope.thing.name,
-        type: $scope.thing.price,
-        endurance: $scope.thing.endurance,
-        price: $scope.thing.price,
+        company: $scope.thing.company,
+        contact: $scope.thing.contact,
+        phone: $scope.thing.phone,
+        email: $scope.thing.email,
+        name: $scope.thing.load,
+        date: $scope.thing.date,
+        pallets: $scope.thing.pallets,
+        volume: $scope.thing.volume,
+        weight: $scope.thing.weight,
+
+        //price: $scope.thing.price,
         info: $scope.thing.info,
         source_address: $scope.thing.source_address,
         dest_address: $scope.thing.dest_address,

@@ -3,8 +3,8 @@
 angular.module('logistaApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('truck', {
-        url: '/truck',
+      .state('trucks', {
+        url: '/trucks',
         data: {pageTitle: 'Vaba transport'},
         templateUrl: 'app/transport/transport.html',
         controller: 'TransportCtrl'

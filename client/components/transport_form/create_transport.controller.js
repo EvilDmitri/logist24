@@ -35,7 +35,7 @@ angular.module('logistaApp')
       if($scope.thing === '') {
         return;
       }
-      $http.post('/api/things', {
+      $http.post('/api/trucks', {
         owner: user._id,
 
         company: $scope.transport.company,
@@ -46,6 +46,7 @@ angular.module('logistaApp')
         dest_address: $scope.transport.dest_address,
         route_start: route.route_start,
         route_end: route.route_end,
+        position: route,
         date: $scope.transport.date,
         body_type: $scope.transport.body_type,
         info: $scope.transport.info

@@ -9,9 +9,21 @@ angular.module('logistaApp')
       $scope.Veod = Things;
       socket.syncUpdates('thing', $scope.Veod);
     });
+
+    $scope.Trucks = [];
+    $http.get('/api/trucks').success(function(Trucks) {
+      $scope.Trucks = Trucks;
+      socket.syncUpdates('truck', $scope.Trucks);
+    });
+
+
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    $scope.showItem = function () {
+      console.log('show');
+    };
 
 
 
