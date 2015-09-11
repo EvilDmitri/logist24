@@ -32,12 +32,11 @@ angular.module('logistaApp')
     ];
 
     function addNew(route) {
-      if($scope.thing === '') {
+      if($scope.transport === '') {
         return;
       }
       $http.post('/api/trucks', {
         owner: user._id,
-
         company: $scope.transport.company,
         contact: $scope.transport.contact,
         phone: $scope.transport.phone,
@@ -51,7 +50,7 @@ angular.module('logistaApp')
         body_type: $scope.transport.body_type,
         info: $scope.transport.info
       });
-      $scope.thing = '';
+      $scope.transport = '';
     }
 
 
@@ -62,9 +61,9 @@ angular.module('logistaApp')
     var route = {};
 
     $scope.createTransport = function() {
-      //console.log($scope.thing.address.geometry.location.lat(), $scope.thing.address.geometry.location.lng());
-      //console.log($scope.thing.address.address_components);
-      console.log($scope.thing);
+      //console.log($scope.transport.address.geometry.location.lat(), $scope.transport.address.geometry.location.lng());
+      //console.log($scope.transport.address.address_components);
+      console.log($scope.transport);
       //Check for errors
       if ($scope.purchase_form.$valid) {
 

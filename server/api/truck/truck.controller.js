@@ -7,7 +7,8 @@ var Truck = require('./truck.model');
 exports.index = function(req, res) {
   Truck.find({}, '', {sort: '-created_at'}, function (err, trucks) {
     if(err) { return handleError(res, err); }
-    return res.status(200).json(trucks);
+    return res.json(200, {'things':trucks, 'count': trucks.length});
+
   });
 };
 

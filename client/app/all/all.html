@@ -19,7 +19,7 @@
 
 
           <h4>Viimased kaubaruumi päringud</h4>
-          <div ng-repeat="vedu in Veod.things">
+          <div ng-repeat="vedu in Veod.things" class="text-left">
             <span>{{vedu.updated_at | limitTo: 10}}</span>&nbsp;
             <a class="" ng-bind="vedu.route_start +' - ' + vedu.route_end" ng-href="/thing/{{vedu._id}}"></a>
           </div>
@@ -27,7 +27,7 @@
 
           <hr>
           <h4>Viimased transpordi päringud</h4>
-          <div ng-repeat="truck in Trucks.things">
+          <div ng-repeat="truck in Trucks.things" class="text-left">
             <span>{{truck.updated_at | limitTo: 10}}</span>&nbsp;
             <a class="" ng-bind="truck.route_start +' - ' + truck.route_end" ng-href="/truck/{{truck._id}}"></a>
           </div>

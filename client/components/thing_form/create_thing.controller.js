@@ -45,7 +45,7 @@ angular.module('logistaApp')
         dest_address: $scope.thing.dest_address,
         route_start: route.route_start,
         route_end: route.route_end,
-        position: route.position,
+        position: route,
         viewed: 0,
         createdOn: Date.now()
       });

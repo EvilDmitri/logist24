@@ -22,11 +22,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="load in Loads" >
+            <tr ng-repeat="truck in Trucks.things" >
               <td class="col-md-2 text-left"><strong ng-bind-html="load.name"></strong></td>
-              <td class="col-md-4 text-left"><strong>{{load.route_start}} - {{load.route_end}}</strong></td>
-              <td class="col-md-2 text-left" >{{load.info.desc | limitTo: 40}}{{load.info.desc.length > 40 ? '...' : ''}}</td>
-              <td class="col-md-4"><a ng-href="/thing/{{load._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
+              <td class="col-md-4 text-left"><strong>{{truck.route_start}} - {{truck.route_end}}</strong></td>
+              <td class="col-md-2 text-left" >{{truck.info | limitTo: 40}}{{truck.info.length > 40 ? '...' : ''}}</td>
+              <td class="col-md-4"><a ng-href="/truck/{{truck._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
             </tr>
             </tbody>
           </table>
@@ -45,11 +45,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="load in Loads" >
+            <tr ng-repeat="load in Loads.things" >
               <td class="col-md-2 text-left"><strong ng-bind-html="load.name"></strong></td>
               <td class="col-md-4 text-left"><strong>{{load.route_start}} - {{load.route_end}}</strong></td>
-              <td class="col-md-2 text-left" >{{load.info.desc | limitTo: 40}}{{load.info.desc.length > 40 ? '...' : ''}}</td>
-              <td class="col-md-4"><a ng-href="/truck/{{load._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
+              <td class="col-md-2 text-left" >{{load.info | limitTo: 40}}{{load.info.length > 40 ? '...' : ''}}</td>
+              <td class="col-md-4"><a ng-href="/thing/{{load._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
             </tr>
             </tbody>
           </table>

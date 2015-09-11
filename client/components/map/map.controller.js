@@ -30,10 +30,8 @@ angular.module('logistaApp')
     var info = [];
     function addMarker(thing, i, color){
       var image = {};
-      if (color === 'red') {image = red_image};
-      if (color === 'green') {image = green_image};
-
-      console.log(image);
+      if (color === 'red') {image = red_image}
+      if (color === 'green') {image = green_image}
 
       var lat = thing.position.position.lat;
       var lng = thing.position.position.lng;
@@ -72,7 +70,7 @@ angular.module('logistaApp')
 
     $http.get('/api/things').success(function(Things) {
       $scope.Things = Things.things;
-      //console.log($scope.Things);
+      console.log($scope.Things);
 
       var all_length = Things.count;
       for (var i=0; i<all_length ; i++) {
@@ -83,7 +81,7 @@ angular.module('logistaApp')
 
     $http.get('/api/trucks').success(function(Trucks) {
       $scope.Trucks = Trucks.things;
-      //console.log($scope.Things);
+      console.log($scope.Trucks);
 
       var all_length = Trucks.count;
       for (var i=0; i<all_length ; i++) {

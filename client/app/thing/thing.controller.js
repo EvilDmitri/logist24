@@ -11,7 +11,7 @@ angular.module('logistaApp')
     $scope.thing = [];
     $http.get('/api/things/'+$scope.id).success(function(awesomeThing) {
       $scope.thing = awesomeThing;
-      //console.log(awesomeThing);
+      console.log(awesomeThing);
       //getCarrier(awesomeThing.owner);
       addMarker(awesomeThing);
 
@@ -24,11 +24,11 @@ angular.module('logistaApp')
       });
     }
 
-    //// Just a sample
-    //$scope.deleteThing = function(id) {
-    //  $http.delete('/api/things/' + id);
-    //  $location.url('/');
-    //};
+    // Just a sample
+    $scope.deleteThing = function(id) {
+      $http.delete('/api/things/' + id);
+      $location.url('/');
+    };
 
      // Update viewed field
     $scope.updateThing = function(id) {
