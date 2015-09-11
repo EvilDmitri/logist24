@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('logistaApp')
-  .controller('CreateCtrl', function ($scope, $http, Auth, $location) {
+  .controller('CreateThingCtrl', function ($scope, $http, Auth, $location) {
 
     $scope.isLoggedIn = Auth.isLoggedIn;
     //if (!$scope.isLoggedIn()){
@@ -50,6 +50,8 @@ angular.module('logistaApp')
         createdOn: Date.now()
       });
       $scope.thing = '';
+
+      $location.path('/');
     }
 
 

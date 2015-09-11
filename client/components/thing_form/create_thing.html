@@ -6,7 +6,7 @@
 
   <!-- Info input form -->
 
-  <form  autocomplete="off" class="form-horizontal request_form" name="purchase_form" ng-controller="CreateCtrl" ng-submit="createThing()">
+  <form  autocomplete="off" class="form-horizontal request_form" name="purchase_form" ng-controller="CreateThingCtrl" ng-submit="createThing()">
     <table cellpadding="0" cellspacing="0" class="enquiry text-left">
       <tbody><tr>
         <td colspan="2" class="subheadline">Saatja andmed</td>
@@ -87,7 +87,7 @@
       </tr>
       <tr>
         <td colspan="2">
-          <textarea name="additional_info" class="query_area"></textarea>	</td>
+          <textarea name="additional_info" class="query_area" ng-model="thing.info"></textarea>	</td>
       </tr>
       </tbody></table>
 

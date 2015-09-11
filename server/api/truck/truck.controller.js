@@ -14,7 +14,7 @@ exports.index = function(req, res) {
 
 // Get a single truck
 exports.show = function(req, res) {
-  Truck.find({'owner': req.params.id}, function (err, truck) {
+  Truck.findById(req.params.id, function (err, truck) {
     if(err) { return handleError(res, err); }
     if(!truck) { return res.status(404).send('Not Found'); }
     return res.json(truck);

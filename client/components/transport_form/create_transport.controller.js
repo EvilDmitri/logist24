@@ -51,6 +51,8 @@ angular.module('logistaApp')
         info: $scope.transport.info
       });
       $scope.transport = '';
+
+      $location.path('/');
     }
 
 

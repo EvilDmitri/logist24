@@ -14,6 +14,11 @@ angular.module('logistaApp')
       //  'link': '/veod'
       //},
       {
+        'title': 'Meist',
+        'description': ['Koormus'],
+        'link': '/about'
+      },
+      {
         'title': 'NEW',
         'description': ['New route'],
         'link': '/new_route'
@@ -27,12 +32,8 @@ angular.module('logistaApp')
         'title': 'Otsi päring',
         'description': ['Otsing'],
         'link': '/search'
-      },
-      {
-        'title': 'Meist',
-        'description': ['Koormus'],
-        'link': '/about'
       }
+
     ];
 
     $scope.isCollapsed = true;

@@ -19,7 +19,11 @@ angular.module('logistaApp')
           // Logged in, redirect to returnToState
           var url = $rootScope.returnToState;
             if($rootScope.returnToStateParams){
-              url = url + '/' + $rootScope.returnToStateParams;
+              if($rootScope.returnToStateParams == 'login') {
+                url = url + '/'
+              } else {
+                url = url + '/' + $rootScope.returnToStateParams;
+              }
             }
           $location.path(url);
         })
