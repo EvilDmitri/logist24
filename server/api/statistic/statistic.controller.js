@@ -23,7 +23,8 @@ exports.index = function(req, res) {
 
   User.find({}, function (err, users){
     if(err) { return handleError(res, err); }
-    return res.json(200, {'users_count': users.length, 'things_count': things_count, 'trucks_count': trucks_count});
+    //return res.json(200, {'users_count': users.length, 'things_count': things_count, 'trucks_count': trucks_count});
+    res.status(200).json({'users_count': users.length, 'things_count': things_count, 'trucks_count': trucks_count});
     //return res.json(200, tracks);
   });
 

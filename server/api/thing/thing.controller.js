@@ -16,9 +16,7 @@ var Thing = require('./thing.model');
 exports.index = function(req, res) {
   Thing.find({}, '', {sort: '-created_at'}, function (err, things) {
     if(err) { return handleError(res, err); }
-    return res.json(200, {'things':things, 'count': things.length});
-    //return res.json(200, {'things':things.sort(), 'count': things.length});
-    //return res.status(200).json(things);
+    return res.status(200).json({'things':things, 'count': things.length});
   });
 };
 
@@ -27,7 +25,7 @@ exports.show = function(req, res) {
   Thing.findById(req.params.id, function (err, thing) {
     if(err) { return handleError(res, err); }
     if(!thing) { return res.status(404).send('Not Found'); }
-    return res.json(thing);
+    return res.status(200).json(thing);
   });
 };
 
@@ -36,7 +34,7 @@ exports.show = function(req, res) {
 exports.show_user_things = function(req, res) {
   Thing.find({'owner': req.params.id}, '', {sort: '-created_at'}, function (err, things) {
     if(err) { return handleError(res, err); }
-    return res.json(200, {'things':things, 'count': things.length});
+    return res.status(200).json({'things':things, 'count': things.length});
   });
 };
 

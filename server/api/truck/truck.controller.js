@@ -7,8 +7,7 @@ var Truck = require('./truck.model');
 exports.index = function(req, res) {
   Truck.find({}, '', {sort: '-created_at'}, function (err, trucks) {
     if(err) { return handleError(res, err); }
-    return res.json(200, {'things':trucks, 'count': trucks.length});
-
+    return res.status(200).json({'things':trucks, 'count': trucks.length});
   });
 };
 
@@ -17,7 +16,7 @@ exports.show = function(req, res) {
   Truck.findById(req.params.id, function (err, truck) {
     if(err) { return handleError(res, err); }
     if(!truck) { return res.status(404).send('Not Found'); }
-    return res.json(truck);
+    return res.status(200).json(truck);
   });
 };
 
@@ -25,7 +24,7 @@ exports.show = function(req, res) {
 exports.show_user_trucks = function(req, res) {
   Truck.find({'owner': req.params.id}, '', {sort: '-created_at'}, function (err, things) {
     if(err) { return handleError(res, err); }
-    return res.json(200, {'trucks':things, 'count': things.length});
+    return res.status(200).json({'trucks':things, 'count': things.length});
   });
 };
 

@@ -30,8 +30,15 @@ angular.module('logistaApp')
     var info = [];
     function addMarker(thing, i, color){
       var image = {};
-      if (color === 'red') {image = red_image}
-      if (color === 'green') {image = green_image}
+      var url = '';
+      if (color === 'red') {
+        image = red_image;
+        url = '/thing/' + thing._id;
+      }
+      if (color === 'green') {
+        image = green_image;
+        url = '/truck/' + thing._id;
+      }
 
       var lat = thing.position.position.lat;
       var lng = thing.position.position.lng;
@@ -43,7 +50,7 @@ angular.module('logistaApp')
       info[i] = new google.maps.InfoWindow({
         content: '<h2>'+ thing.company +'</h2>' + infoText + '<br><strong>Pealelaadimise koht: </strong>' + thing.source_address.formatted_address +
         '<br><strong>Mahalaadimise koht: </strong>' + thing.dest_address.formatted_address +
-        '<br><a href="/thing/' + thing._id + '">Vaata</a>'
+        '<br><a href="' + url + '">Vaata</a>'
       });
       //info[i].setOptions(options:{visible:false});
 
@@ -70,22 +77,22 @@ angular.module('logistaApp')
 
     $http.get('/api/things').success(function(Things) {
       $scope.Things = Things.things;
-      console.log($scope.Things);
+      //console.log($scope.Things);
 
       var all_length = Things.count;
       for (var i=0; i<all_length ; i++) {
-          addMarker($scope.Things[i], i, 'red');
+          addMarker($scope.Things[i], i+markers.length, 'red');
       }
       socket.syncUpdates('thing', $scope.Things, addOne);
     });
 
     $http.get('/api/trucks').success(function(Trucks) {
       $scope.Trucks = Trucks.things;
-      console.log($scope.Trucks);
+      //console.log($scope.Trucks);
 
       var all_length = Trucks.count;
       for (var i=0; i<all_length ; i++) {
-          addMarker($scope.Trucks[i], i, 'green');
+          addMarker($scope.Trucks[i], i+markers.length, 'green');
       }
       socket.syncUpdates('thing', $scope.Trucks, addOne);
     });
