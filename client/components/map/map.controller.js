@@ -44,8 +44,12 @@ angular.module('logistaApp')
       var lng = thing.position.position.lng;
       var latlng = new google.maps.LatLng(lat, lng);
 
-      var infoText = $filter('limitTo')(thing.info, 20);
-      infoText += thing.info.length > 20 ? '...' : '';
+      var infoText = '';
+      if(thing.info) {
+        $filter('limitTo')(thing.info, 20);
+        infoText += thing.info.length > 20 ? '...' : '';
+      }
+
 
       info[i] = new google.maps.InfoWindow({
         content: '<h2>'+ thing.company +'</h2>' + infoText + '<br><strong>Pealelaadimise koht: </strong>' + thing.source_address.formatted_address +
