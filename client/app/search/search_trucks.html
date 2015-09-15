@@ -1,0 +1,98 @@
+<div class="wedo">
+  <div class="container" ng-controller="SearchTrucksCtrl">
+    <div class="wedo-main">
+
+
+      <div class="we-do-top">
+
+        <div>
+          <h1>Otsi vaba transport või kaubaruumi, <br>helista klientile ja sõida mõni hetke pärast!</h1>
+        </div>
+
+        <div class="clearfix"> </div>
+
+      </div>
+
+
+      <!-- Search form -->
+      <div>
+
+        <form ng-hide="result" autocomplete="off" class="form-horizontal" name="search_form" ng-submit="searchThing()">
+          <!-- Veo type-->
+          <div class="form-group">
+            <label for="veo_type" class="col-sm-2 control-label">Veo tüüp</label>
+            <div class="col-sm-10">
+              <select id="veo_type" ng-model="body_type" ng-options="b.name for b in bodies">
+                <option value="" selected disabled>-- Vali keretüüp --</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="source_address" class="col-sm-2 control-label">Väljumine aadress</label>
+            <div class="col-sm-10">
+              <input type="text" required class="form-control" id="source_address" placeholder="Väljumine aadress"
+                     g-places-autocomplete options="autocompleteOptions" ng-model="search.source_address">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="dest_address" class="col-sm-2 control-label">Tarne aadress</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="dest_address" placeholder="Tarne aadress"
+                     g-places-autocomplete options="autocompleteOptions" ng-model="search.dest_address">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-success" >Otsi</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
+
+
+      <div ng-show="result">
+        <h4 ng-show="Loads.found">See on teie otsi tulemused</h4>
+        <h4 ng-hide="Loads.found">Otsing ei andnud tulemusi</h4>
+
+        <table class="table table-striped">
+          <tbody>
+          <tr ng-repeat="load in Loads" >
+            <td class="col-md-2 text-left"><strong ng-bind-html="load.company"></strong></td>
+            <td class="col-md-4 text-left" >{{load.info | limitTo: 20}}{{load.info.length > 20 ? '...' : ''}}</td>
+            <td class="col-md-4"><a ng-href="/truck/{{load._id}}" class="buy">{{ 'LOOK' | translate }}</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="" ng-show="result">
+        <button class="btn btn-info" type="button" ng-click="result = ''">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          Otsi veel</button>
+      </div>
+
+
+      <div class="clearfix"> </div>
+    </div>
+
+
+
+
+
+    <div>
+
+    </div>
+  </div>
+</div>
+
+
+
