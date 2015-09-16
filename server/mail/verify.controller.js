@@ -31,8 +31,8 @@ exports.send = function(req, res) {
     console.log('saved!');
   });
 
-  host='localhost:9000';
-  //host='logistik24.ee';
+  //host='localhost:9000';
+  host='logistik24.ee';
 
   link="http://"+host+"/mail/verify?id="+rand;
   mailOptions={
