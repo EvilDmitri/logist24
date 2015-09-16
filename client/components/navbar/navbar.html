@@ -1,4 +1,5 @@
-<div class="navbar navbar-default navbar-inverse navbar-static-top" ng-controller="NavbarCtrl">
+<div ng-controller="NavbarCtrl">
+<div class="navbar navbar-default navbar-inverse navbar-static-top">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
@@ -19,8 +20,22 @@
 
 
       <ul class="nav navbar-nav">
-        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}" ng-bind="item.title | translate"></a>
+        <!--<li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">-->
+            <!--<a ng-href="{{item.link}}" ng-bind="item.title | translate"></a>-->
+        <!--</li>-->
+        <li ng-class="{active: isActive(item.link)}">
+          <a ng-href="/about">Meist</a>
+        </li>
+        <li ng-class="{active: isActive(item.link)}">
+          <a ng-href="/new_route" ng-show="isLoggedIn()">Saada päring</a>
+          <a href="" ng-click="login_user()" ng-hide="isLoggedIn()">Saada päring</a>
+
+        </li>
+        <li ng-class="{active: isActive(item.link)}">
+          <a ng-href="/loads">Kõik päringud</a>
+        </li>
+        <li ng-class="{active: isActive(item.link)}">
+          <a ng-href="/search">Otsi päring</a>
         </li>
 
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/my_trucks')}"><a ng-href="/my_trucks">Minu päringud</a></li>
@@ -45,3 +60,20 @@
     </div>
   </div>
 </div>
+
+    <!--<modal title="Login form" ng-show="showModal">-->
+      <!--<form role="form">-->
+        <!--<div class="form-group">-->
+          <!--<label for="email">Email address</label>-->
+          <!--<input type="email" class="form-control" id="email" placeholder="Enter email" />-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<label for="password">Password</label>-->
+          <!--<input type="password" class="form-control" id="password" placeholder="Password" />-->
+        <!--</div>-->
+        <!--<button type="submit" class="btn btn-default">Submit</button>-->
+      <!--</form>-->
+    <!--</modal>-->
+
+
+  </div>

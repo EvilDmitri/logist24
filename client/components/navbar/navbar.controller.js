@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('logistaApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth, $translate) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, $translate, Modal) {
     $scope.menu = [
       //{
       //  'title': 'ALL',
@@ -35,6 +35,19 @@ angular.module('logistaApp')
       }
 
     ];
+
+
+    var modal = Modal.confirm.askToLogin(function(message) { // callback when modal is confirmed
+      $location.path("/login"); //will redirect to login page, make sure your controller is using $location
+    });
+
+    $scope.login_user = function() { // callback when modal is confirmed
+      modal('Saada päring');
+      };
+
+
+
+
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

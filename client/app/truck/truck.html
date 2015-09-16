@@ -20,19 +20,19 @@
       <tr>
         <td class="col-md-2">Kontaktisik:</td>
         <td class="col-md-8" ng-show="isLoggedIn()">{{thing.contact}}</td>
-        <td class="col-md-8" ng-hide="isLoggedIn()" ><a href="/login">Logi sisse</a> või <a href="/signup">registreeru</a> et näha</td>
+        <td class="col-md-8" ng-hide="isLoggedIn()" ><a href="" ng-click="login_required('kontaktisik')">Vaata</a></td>
       </tr>
 
       <tr>
         <td class="col-md-2">Telefon:</td>
         <td class="col-md-8" ng-show="isLoggedIn()">{{thing.phone}}</td>
-        <td class="col-md-8" ng-hide="isLoggedIn()" ><a href="/login">Logi sisse</a> või <a href="/signup">registreeru</a> et näha</td>
+        <td class="col-md-8" ng-hide="isLoggedIn()" ><a href="" ng-click="login_required('telefon')">Vaata</a></td>
       </tr>
 
       <tr>
         <td class="col-md-2">E-post:</td>
         <td class="col-md-8" ng-show="isLoggedIn()">{{thing.email}}</td>
-        <td class="col-md-8" ng-hide="isLoggedIn()" ><a href="/login">Logi sisse</a> või <a href="/signup">registreeru</a> et näha</td>
+        <td class="col-md-8" ng-hide="isLoggedIn()" ><a href="" ng-click="login_required('e-post')">Vaata</a></td>
       </tr>
 
       <tr>

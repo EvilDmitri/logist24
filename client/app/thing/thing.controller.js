@@ -1,12 +1,21 @@
 'use strict';
 
 angular.module('logistaApp')
-  .controller('ThingCtrl', function ($scope, $http, $location, socket, $stateParams, Auth) {
+  .controller('ThingCtrl', function ($scope, $http, $location, socket, $stateParams, Auth, Modal) {
 
     $scope.isLoggedIn = Auth.isLoggedIn;
 
     $scope.id = $stateParams.id;
     //console.log('location', $scope.id);
+
+    var modal = Modal.confirm.askToLogin(function(message) { // callback when modal is confirmed
+      $location.path("/login"); //will redirect to login page, make sure your controller is using $location
+    });
+
+    $scope.login_required = function (act) {
+      modal(act + ' vaata');
+    };
+
 
     $scope.thing = [];
     $http.get('/api/things/'+$scope.id).success(function(awesomeThing) {
