@@ -11,6 +11,14 @@ exports.index = function(req, res) {
   });
 };
 
+// Get limited list of trucks
+exports.index_limited = function(req, res) {
+  Truck.find({}, '', {sort: '-created_at', limit: 5}, function (err, trucks) {
+    if(err) { return handleError(res, err); }
+    return res.status(200).json({'things':trucks, 'count': trucks.length});
+  });
+};
+
 // Get a single truck
 exports.show = function(req, res) {
   Truck.findById(req.params.id, function (err, truck) {

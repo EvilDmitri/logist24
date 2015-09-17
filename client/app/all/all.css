@@ -61,3 +61,12 @@
 .all_map{
 
 }
+
+
+.truck_image {
+  height: 183px;
+  width: 276px;
+  background: #f00 url(/static/images/truck.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}

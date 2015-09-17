@@ -6,6 +6,8 @@ var controller = require('./truck.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
+router.get('/limited', controller.index_limited);
+
 router.get('/:id', controller.show);
 
 router.get('/user/:id', controller.show_user_trucks);

@@ -5,13 +5,13 @@ angular.module('logistaApp')
 
     // things
     $scope.Veod = [];
-    $http.get('/api/things').success(function(Things) {
+    $http.get('/api/things/limited').success(function(Things) {
       $scope.Veod = Things;
       socket.syncUpdates('thing', $scope.Veod);
     });
 
     $scope.Trucks = [];
-    $http.get('/api/trucks').success(function(Trucks) {
+    $http.get('/api/trucks/limited').success(function(Trucks) {
       $scope.Trucks = Trucks;
       socket.syncUpdates('truck', $scope.Trucks);
     });

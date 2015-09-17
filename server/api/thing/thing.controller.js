@@ -20,6 +20,14 @@ exports.index = function(req, res) {
   });
 };
 
+// Get limited list of things
+exports.index_limited = function(req, res) {
+  Thing.find({}, '', {sort: '-created_at', limit: 5}, function (err, things) {
+    if(err) { return handleError(res, err); }
+    return res.status(200).json({'things':things, 'count': things.length});
+  });
+};
+
 // Get a single thing
 exports.show = function(req, res) {
   Thing.findById(req.params.id, function (err, thing) {
