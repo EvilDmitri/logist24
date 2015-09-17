@@ -1,7 +1,7 @@
 #items{
   float:left;
   padding:22px 0 0 0;
-  width:770px;
+  /*width:770px;*/
 }
 .item{
   width:241px;
@@ -29,7 +29,7 @@
 .item_description{
   width: 202px;
   height: 173px;
-  margin:26px 0 0 25px;
+  margin:10px 0 0 0px;
 }
 .view{
   display:block;
@@ -64,8 +64,8 @@
 
 
 .truck_image {
-  height: 183px;
-  width: 276px;
+  height: 160px;
+  width: 250px;
   background: #f00 url(/static/images/truck.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;

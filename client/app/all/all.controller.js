@@ -7,6 +7,7 @@ angular.module('logistaApp')
     $scope.Veod = [];
     $http.get('/api/things/limited').success(function(Things) {
       $scope.Veod = Things;
+      console.log(Things);
       socket.syncUpdates('thing', $scope.Veod);
     });
 
