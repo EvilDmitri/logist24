@@ -34,11 +34,11 @@ exports.send = function(req, res) {
   //host='localhost:9000';
   host='logistik24.ee';
 
-  link="http://"+host+"/mail/verify?id="+rand;
+  link="http://www."+host+"/confirm/"+rand;
   mailOptions={
     from: 'Logistik24.ee ✔ <logistik24.ee@gmail.com>', // sender address
     to : recipient,
-    subject : "Please confirm your Email account",
+    subject : "Palun kinnitage oma e-posti",
     html : "Tere,<br> Palun kliki lingi, et kontrollida oma e-posti.<br><a href="+link+">Vajuta siia, et kontrollida</a>"
   };
   //console.log(mailOptions);
@@ -60,27 +60,28 @@ exports.send = function(req, res) {
 // Verify the link
 exports.verify = function(req, res) {
 
-  console.log(req.get('host'));
+  //console.log(req.get('host'));
 
   //if((req.protocol+"://"+req.get('host'))==("http://"+host))
   //{
 
     VerifyEmail.findOne({'id': req.query.id}, function (err, email) {
-      console.log(email);
-      console.log("Domain is matched. Information is from Authentic email");
+      //console.log(email);
+      //console.log("Domain is matched. Information is from Authentic email");
       if(req.query.id==rand)
       {
-        console.log("email is verified");
-        res.end("<h1>Email "+mailOptions.to+" is been Successfully verified" +
-          "<br> Now you can use Logistik24");
+        //console.log("email is verified");
+        //res.end("<h1> "+mailOptions.to+" is been Successfully verified" +
+        //  "<br> Now you can use Logistik24");
+        res.end("OK");
         VerifyEmail.remove({'id': req.query.id}, function (err, data) {
-          console.log('email removed');
+          //console.log('email removed');
         })
       }
       else
       {
-        console.log("email is not verified");
-        res.end("<h1>Bad Request</h1>");
+        //console.log("email is not verified");
+        res.end("ERROR");
       }
 
 
