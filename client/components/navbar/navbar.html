@@ -14,7 +14,7 @@
 
       <div class="logo pull-left">
         <h1>
-          <a ng-href="/"><p>Logistik<span style="color:blue">24</span></p></a>
+          <a ng-href="/"><p><span  translate>Logistik</span><span style="color:blue">24</span></p></a>
         </h1>
       </div>
 
@@ -24,18 +24,18 @@
             <!--<a ng-href="{{item.link}}" ng-bind="item.title | translate"></a>-->
         <!--</li>-->
         <li ng-class="{active: isActive(item.link)}">
-          <a ng-href="/about">Meist</a>
+          <a ng-href="/about" translate>Meist</a>
         </li>
         <li ng-class="{active: isActive(item.link)}">
-          <a ng-href="/new_route" ng-show="isLoggedIn()">Saada päring</a>
-          <a href="" ng-click="login_user()" ng-hide="isLoggedIn()">Saada päring</a>
+          <a ng-href="/new_route" ng-show="isLoggedIn()" translate>Saada</a>
+          <a href="" ng-click="login_user()" ng-hide="isLoggedIn()" translate>Saada</a>
 
         </li>
         <li ng-class="{active: isActive(item.link)}">
-          <a ng-href="/loads">Kõik päringud</a>
+          <a ng-href="/loads" translate="">ALL</a>
         </li>
         <li ng-class="{active: isActive(item.link)}">
-          <a ng-href="/search">Otsi päring</a>
+          <a ng-href="/search" translate>FIND</a>
         </li>
 
         <!--<li ng-show="isLoggedIn()" ng-class="{active: isActive('/my_trucks')}"><a ng-href="/my_trucks">Minu päringud</a></li>-->
@@ -46,8 +46,8 @@
 
 
       <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a class="btn" href="/login">Sisse</a></li>
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a class="btn btn_sign" href="/signup">Registeeru</a></li>
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a class="btn" href="/login" translate>Sisse</a></li>
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a class="btn btn_sign" href="/signup" translate>Registeeru</a></li>
 
 
 

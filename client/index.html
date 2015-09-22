@@ -75,11 +75,11 @@
 
     <div ng-include="'components/navbar/navbar.html'"></div>
 
-    <!--<div class="languages pull-right">-->
-      <!--<button ng-click="changeLanguage('ee')" translate="BUTTON_TEXT_EE"></button>-->
+    <div class="languages pull-right" ng-controller="MainCtrl">
+      <button ng-click="changeLanguage('ee')" translate="BUTTON_TEXT_EE"></button>
       <!--<button ng-click="changeLanguage('en')" translate="BUTTON_TEXT_EN"></button>-->
-      <!--<button ng-click="changeLanguage('ru')" translate="BUTTON_TEXT_RU"></button>-->
-    <!--</div>-->
+      <button ng-click="changeLanguage('ru')" translate="BUTTON_TEXT_RU"></button>
+    </div>
 
 
     <!--<div class="logo">-->
@@ -175,6 +175,7 @@
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/map/map.controller.js"></script>
+          <script src="components/modal/modal.controller.js"></script>
           <script src="components/modal/modal.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>

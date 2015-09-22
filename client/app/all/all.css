@@ -66,7 +66,7 @@
 .truck_image {
   height: 160px;
   width: 250px;
-  background: #f00 url(/static/images/truck.jpg);
+  background: #fff url(/static/images/truck.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('logistaApp')
-  .factory('Modal', function ($rootScope, $modal) {
+  .factory('Modal', function ($rootScope, $modal, $translate) {
     /**
      * Opens a modal
      * @param  {Object} scope      - an object to be merged with modal's scope
@@ -131,7 +131,7 @@ angular.module('logistaApp')
             modal: {
               dismissable: true,
               title: 'Login',
-              html: '<p>Kui soovite <strong>' + name + '</strong> on vaja logi sisse.</p>', //set the modal message here, name is the parameter we passed in
+              html: '<p><span translate>Modal_text_start</span><strong>' + name + '</strong><span translate>Modal_text_end</span></p>', //set the modal message here, name is the parameter we passed in
               //html: '<p>Kui soovite seda teha, siis on vaja logi sisse.</p>', //set the modal message here, name is the parameter we passed in
               buttons: [ {//this is where you define you buttons and their appearances
                 classes: 'btn-warning',
