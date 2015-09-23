@@ -6,7 +6,7 @@
       <div class="we-do-top">
 
         <div>
-          <h1>Otsi vaba transport või kaubaruumi, <br>helista klientile ja sõida mõni hetke pärast!</h1>
+          <h1 translate="Search.Header"></h1>
         </div>
 
         <div class="clearfix"> </div>
@@ -20,14 +20,14 @@
         <form >
           <div>
             <input checked="" type="radio" name="request_type" id="req_transport" value="transport" ng-model="request.type">
-            <label for="req_transport">Transpordi päring</label>
+            <label for="req_transport" translate="Search.Trucks"></label>
           </div>
           <div>
             <input type="radio" name="request_type" id="req_load" value="load" ng-model="request.type">
-            <label for="req_load">Kaubaruumi päring</label></div>
+            <label for="req_load" translate="Search.Loads"></label></div>
 
           <div>
-            <button class="btn btn-info" type="button" ng-click="makeRequest()">Edasi
+            <button class="btn btn-info" type="button" ng-click="makeRequest()" translate="Search.BtnForward">
               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
           </div>
 

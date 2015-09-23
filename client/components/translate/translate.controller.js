@@ -34,11 +34,34 @@ app.config(function ($translateProvider) {
       Main: {
         HOT: 'Kuumad pakkumised',
         LOADS : 'Vaba kauba',
-        TRUCKS : 'Vaba transport'
+        TRUCKS : 'Vaba transport',
+        LastLoads: 'Viimased kaubaruumi päringud',
+        LastTrucks: 'Viimased transpordi päringud'
       },
 
       Statistics: {
-        Header: 'Meie statistika'
+        Header: 'Meie statistika',
+        Users: 'registreerunud kasutajat',
+        Loads: 'registreerunud kaubaruumi',
+        Trucks: 'registreerunud transpordi'
+      },
+
+      Loads: {
+        Header: 'Otsi oma transport või kaubaruumi ja sõida!',
+        Trucks: 'Vaba transport',
+        Loads: 'Kaubaruumid',
+        Name:'Nimetus',
+        Route: 'Marsruut',
+        Info: 'Lisainfo'
+      },
+
+      Search: {
+        Header: 'Otsi vaba transport või kaubaruumi, <br>helista klientile ja sõida mõni hetke pärast!',
+        Trucks: 'Transpordi päring',
+        Loads: 'Kaubaruumi päring',
+        BtnForward: 'Edasi',
+        BtnBack: '',
+        BtnSearch: 'Otsi'
       },
 
       Modal_text_start : 'Kui soovite '
@@ -57,11 +80,35 @@ app.config(function ($translateProvider) {
       Main: {
         HOT: 'Горячие предложения',
         LOADS : 'Товары',
-        TRUCKS : 'Свободный транспорт'
+        TRUCKS : 'Свободный транспорт',
+        LastLoads: 'Последние запросы транспорта',
+        LastTrucks: 'Последние предложения транспорта'
       },
 
       Statistics: {
-        Header: 'Наша статистика'
+        Header: 'Наша статистика',
+        Users: 'пользователей',
+        Loads: 'товаров',
+        Trucks: 'транспорта'
+
+      },
+
+      Loads: {
+        Header: 'Найди себе транспорт или товар и в путь!',
+        Trucks: 'Свободный транспорт',
+        Loads: 'Грузы',
+        Name:'Название',
+        Route: 'Маршрут',
+        Info: 'Информация'
+      },
+
+      Search: {
+        Header: 'Наайди транспорт или товар, звони клиенту и уже через несколько мгновений можешь ехать',
+        Trucks: 'Поиск транспорта',
+        Loads: 'Поиск товара',
+        BtnForward: 'Далее',
+        BtnBack: 'Назад',
+        BtnSearch: 'Искать'
       },
 
       NEW_TRUCK: 'Послать запрос',

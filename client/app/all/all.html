@@ -63,7 +63,7 @@
 
           <div class="col-md-6">
             <br/>
-            <h5><strong>Viimased kaubaruumi päringud</strong></h5>
+            <h5><strong translate="Main.LastLoads"></strong></h5>
             <div ng-repeat="vedu in Veod.things" class="text-left">
               <span>{{vedu.updated_at | limitTo: 10}}</span>&nbsp;
               <a class="" ng-bind="vedu.route_start +' - ' + vedu.route_end" ng-href="/thing/{{vedu._id}}"></a>
@@ -71,7 +71,7 @@
 
 
             <hr>
-            <h5><strong>Viimased transpordi päringud</strong></h5>
+            <h5><strong translate="Main.LastTrucks"></strong></h5>
             <div ng-repeat="truck in Trucks.things" class="text-left">
               <span>{{truck.updated_at | limitTo: 10}}</span>&nbsp;
               <a class="" ng-bind="truck.route_start +' - ' + truck.route_end" ng-href="/truck/{{truck._id}}"></a>
