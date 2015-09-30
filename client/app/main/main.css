@@ -17,11 +17,13 @@ a {
 }
 @font-face {
   font-family: 'Timmana-Regular';
-  src:url(/static/fonts/Timmana-Regular.ttf) format('truetype');
+  src:url(/static/fonts/Roboto-Regular.ttf) format('truetype');
+  /*src:url(/static/fonts/Timmana-Regular.ttf) format('truetype');*/
 }
 @font-face {
   font-family: 'Rambla-Regular';
-  src:url(/static/fonts/Rambla-Regular.ttf) format('truetype');
+  src:url(/static/fonts/OpenSans-Regular.ttf) format('truetype');
+  /*src:url(/static/fonts/Rambla-Regular.ttf) format('truetype');*/
 }
 /*--header  start here--*/
 /*.header-top {*/
