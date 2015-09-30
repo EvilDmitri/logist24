@@ -7,6 +7,8 @@ angular.module('logistaApp')
       //var latlng = new google.maps.LatLng("58.6, 24.0");
       //map.setCenter(latlng);
       //map.setScale(7);
+
+      console.log($scope);
     });
 
     var green_image = {
@@ -102,7 +104,23 @@ angular.module('logistaApp')
     });
 
 
-
+    // Expander
+    //function f_createElement() {
+    //    var newDiv = document.createElement("div");
+    //    newDiv.innerHTML = "<img src='/static/images/map/a02.jpg' width='500' />";
+    //    newDiv.id = "newDiv";
+    //  //console.log($document[0].body);
+    //  var sp2 = document.getElementById("navbar");
+    //  $document[0].body.insertBefore(newDiv, sp2);
+    //}
+    //
+    //function f_removeElement() {
+    //    var newDiv = document.getElementById("newDiv");
+    //    newDiv.parentNode.removeChild(newDiv);
+    //}
+    //
+    //document.getElementById("Expando").onmouseover = f_createElement;
+    ////document.getElementById("Expando").onmouseout = f_removeElement;
 
     //socket.syncUpdates('thing', $scope.Things);
     //

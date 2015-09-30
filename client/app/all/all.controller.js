@@ -27,7 +27,6 @@ angular.module('logistaApp')
     };
 
 
-
     //$scope.addThing = function() {
     //  if($scope.newThing === '') {
     //    return;

@@ -1,12 +1,19 @@
 
 <div ng-controller="MapCtrl" class="google_map">
-  <map center="58.6, 24.0" zoom="7" >
+  <!--<map center="58.6, 24.0" zoom="5">-->
 
-    <!--<marker position="{{thing.position}}" ng-repeat="thing in Things"></marker>-->
+  <!--</map>-->
 
-  </map>
+  <ul class="enlarge">
+    <li>
+      <map name="little" center="58.6, 24.0" zoom="5" style="height: 200px; width: 300px;" disable-default-u-i="true"></map>
+        <span>
+          <!--<img src="/static/images/map/a02.jpg">-->
+            <map name="big" center="58.6, 24.0" zoom="6" style="height: 400px; width: 600px;"></map>
+        </span>
 
+    </li>
+  </ul>
 
-  <!--<div ng-repeat="thing in Things">{{thing}} </div>-->
 
 </div>
